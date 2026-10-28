@@ -22,3 +22,10 @@ Konvensi modul: g = 10 m/s², ρ air = 1000 kg/m³, p_atm = 100 000 Pa (kecuali 
 ## Konvensi
 - Kedalaman h selalu vertikal; tekanan ukur vs mutlak dinyatakan jelas.
 - Kode warna: tekanan merah muda, gaya apung hijau mint, berat/gaya kuning, air biru, ρ ungu, γ toska.
+
+## Angka tampilan tambahan (tidak dinarasikan)
+
+- γ etanol ≈ 0,022 N/m, aseton ≈ 0,024 N/m (20 °C, CRC Handbook) — batang di adegan `soap` tanpa angka.
+- Hidrometer 0,8 / 1,0 / 1,2 g/mL; larutan gula ≈ 1,15 g/mL (± 35 % sukrosa) — ilustrasi.
+- Baja ≈ 7850 kg/m³; es 917, air laut 1025 kg/m³ (`iceberg`); lilin padat > 1000 hanya kualitatif.
+- Kapilaritas: lup menggambar θ = 25° agar sudut terlihat; hitungan memakai θ ≈ 0.
