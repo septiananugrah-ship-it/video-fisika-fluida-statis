@@ -2,7 +2,7 @@
 
 Video edukasi **≈ 21 menit** (2K, 30 FPS) · **SCIENTIAN — Explore Science with Yayan** · disusun oleh **Septian Anugrah Dwi Putra**. Seri Fisika Umum #2 (sebelumnya: Usaha & Energi; berikutnya: Fluida Dinamis, Momentum). Dibuat dengan [Remotion](https://remotion.dev).
 
-Gaya visual seri **"Lab"** bernuansa air: latar biru tinta bergelembung, air bergelombang dengan pantulan cahaya, dan kode warna tetap (tekanan merah muda · gaya apung hijau mint · berat kuning · air biru · ρ ungu · γ toska). Intro SCIENTIAN dirender otomatis dari repo `science-intro` dan ditempel di depan.
+Gaya visual seri **"Lab"** bernuansa air: latar biru tinta bergelembung, air bergelombang dengan pantulan cahaya, dan kode warna tetap (tekanan merah muda · gaya apung hijau mint · berat kuning · air biru · ρ ungu · γ toska). Tanpa intro terpisah: judul pembuka memuat logo S + "Explore Science with Yayan".
 
 ## Isi
 
@@ -46,5 +46,5 @@ src/tts.ts              teks ramah-TTS (ejaan huruf & simbol)
 src/timeline.ts         waktu baris & kata (estimasi suku kata, atau durasi rekaman asli)
 src/components/         latar cetak biru, subtitle, heading bab, primitif rumus, komponen fisika (batang energi, pegas, balok, grafik) + fluida (air bergelombang, tangki, panah tekanan, gelembung)
 src/scenes/             23 adegan
-scripts/                voice-over (ElevenLabs/Edge), musik orisinal (numpy), cek pengucapan, render potongan & gabung + intro, QA still
+scripts/                voice-over (ElevenLabs/Edge), musik orisinal (numpy), cek pengucapan, render potongan & gabung, QA still
 ```
