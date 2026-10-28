@@ -1,0 +1,147 @@
+hook-00	Sebuah kapal kargo dari baja, beratnya puluhan ribu ton, mengapung dengan tenang di laut.
+hook-01	Di sampingnya, sebuah baut baja kecil dijatuhkan ke air. Baut itu langsung tenggelam.
+hook-02	Bahannya sama-sama baja. Lalu mengapa yang raksasa justru mengapung?
+hook-03	Ada teka-teki lain: dinding bendungan selalu dibuat jauh lebih tebal di bagian bawah.
+hook-04	Dan seorang penyelam yang turun sepuluh meter saja sudah merasakan telinganya tertekan.
+hook-05	Ketiganya dijawab oleh satu hal yang tidak terlihat, tetapi terus mendorong dari segala arah: tekanan fluida.
+hook-06	Di video ini, kita akan belajar membaca dorongan tak terlihat itu, dari secangkir air sampai dasar samudra.
+roadmap-00	Video ini membahas fluida statis, yaitu zat cair dan gas yang sedang diam, dalam tiga bagian.
+roadmap-01	Bagian pertama, konsep dan cara berpikirnya: massa jenis, tekanan, hidrostatika, Paskal, Arkimedes, tegangan permukaan, dan kapilaritas.
+roadmap-02	Bagian kedua, fluida statis di laboratorium kimia: hidrometer, sabun, dan kromatografi.
+roadmap-03	Bagian ketiga, penerapannya: kapal selam, tekanan darah, dan gunung es.
+density-00	Mari mulai dari pertanyaan sederhana: mana yang lebih berat, satu kilogram besi atau satu kilogram kapas?
+density-01	Tentu sama beratnya. Bedanya ada pada seberapa padat massa itu dikemas.
+density-02	Besaran ini disebut massa jenis, ro: massa dibagi volume.
+density-03	Air bermassa jenis seribu kilogram per meter kubik. Artinya, satu liter air bermassa satu kilogram.
+density-04	Minyak goreng sekitar sembilan ratus dua puluh, besi hampir delapan ribu, dan raksa sekitar tiga belas ribu lima ratus.
+density-05	Tuang beberapa cairan ke dalam satu gelas, dan mereka menyusun diri: yang massa jenisnya paling kecil berada paling atas.
+density-06	Massa jenis inilah kunci pertama untuk menjawab teka-teki kapal tadi.
+pressure-00	Tekan sebuah paku dengan jempol. Ujung paku yang runcing menancap ke kayu, tetapi kepala paku tidak melukai jempolmu.
+pressure-01	Gayanya sama besar di kedua ujung. Yang berbeda adalah luas tempat gaya itu tersebar.
+pressure-02	Inilah tekanan: gaya tegak lurus dibagi luas. Satuannya paskal, yaitu newton per meter persegi.
+pressure-03	Dengan gaya dua puluh newton, kepala paku seluas satu sentimeter persegi menerima dua ratus ribu paskal.
+pressure-04	Ujung paku seluas setengah milimeter persegi menerima empat puluh juta paskal, dua ratus kali lebih besar.
+pressure-05	Di dalam fluida, tekanan punya sifat istimewa: ia mendorong ke segala arah, dan selalu tegak lurus permukaan yang disentuhnya.
+pressure-06	Bayangkan triliunan molekul yang terus menabrak dinding. Setiap tabrakan adalah dorongan kecil, dan jumlah seluruh dorongan per satuan luas itulah tekanan.
+hydro-00	Sekarang ambil sebuah kolom air setinggi ha di dalam kolam yang tenang.
+hydro-01	Kolom ini diam, jadi gaya-gayanya seimbang: tekanan dari bawah harus menahan tekanan dari atas, ditambah berat air di dalam kolom.
+hydro-02	Berat air itu sama dengan ro kali luas kali ha kali ge. Bagi dengan luas, dan kita dapat rumus terpenting fluida statis.
+hydro-03	Tekanan di kedalaman ha sama dengan tekanan di permukaan, ditambah ro ge ha.
+hydro-04	Makin dalam, makin banyak air di atas kita yang harus ditopang. Itulah sebabnya dinding bendungan dibuat lebih tebal di bagian bawah.
+hydro-05	Contoh: akuarium sedalam enam puluh sentimeter. Tekanan air di dasarnya enam ribu paskal di atas tekanan udara.
+hydro-06	Dengan luas dasar nol koma dua meter persegi, air menekan dasar dengan gaya seribu dua ratus newton, setara beban seratus dua puluh kilogram.
+hydro-07	Yang mengejutkan: bentuk wadah tidak berpengaruh. Pada kedalaman yang sama, tekanan di dasar gelas ramping sama dengan di dasar baskom lebar.
+hydro-08	Yang menentukan hanya kedalaman vertikal dan jenis cairannya.
+atmosphere-00	Kita sendiri hidup di dasar sebuah lautan, yaitu lautan udara setebal puluhan kilometer.
+atmosphere-01	Berat udara di atas kepala kita menghasilkan tekanan atmosfer, sekitar seratus ribu paskal.
+atmosphere-02	Itu setara dengan beban sepuluh ton di atas setiap meter persegi. Kita tidak gepeng karena tekanan di dalam tubuh mendorong balik sama besar.
+atmosphere-03	Karena itu ada dua cara mengukur tekanan. Tekanan mutlak diukur dari ruang hampa. Tekanan ukur diukur dari tekanan udara sekitar.
+atmosphere-04	Ban mobil yang terbaca dua koma dua bar pada alat ukur sebenarnya bertekanan mutlak sekitar tiga koma dua bar.
+atmosphere-05	Di bawah air, setiap sepuluh meter kedalaman menambah sekitar seratus ribu paskal, kira-kira satu atmosfer lagi.
+atmosphere-06	Penyelam di kedalaman sepuluh meter merasakan tekanan dua kali lipat tekanan di permukaan. Itulah yang menekan gendang telinganya.
+manometer-00	Isi pipa berbentuk u dengan air. Kedua permukaannya akan setinggi sama.
+manometer-01	Alasannya: titik-titik yang setinggi, di dalam cairan diam yang sama dan saling terhubung, pasti bertekanan sama.
+manometer-02	Aturan ini menjadi alat berpikir yang ampuh: telusuri jalur di dalam cairan, tambahkan ro ge ha saat turun, kurangi saat naik.
+manometer-03	Hubungkan satu ujung pipa ke tabung gas. Gas mendorong cairan sehingga sisi gas turun dan sisi terbuka naik.
+manometer-04	Jika cairannya bermassa jenis delapan ratus dan beda tingginya dua puluh lima sentimeter, tekanan ukur gas sama dengan dua ribu paskal.
+manometer-05	Alat ini disebut manometer. Ia mengubah tekanan yang tak terlihat menjadi beda tinggi yang bisa dibaca dengan penggaris.
+manometer-06	Sekarang isi pipa u dengan minyak di satu sisi dan air di sisi lain. Kolom minyak dua puluh sentimeter diimbangi kolom air enam belas sentimeter.
+manometer-07	Dari situ massa jenis minyak dapat dihitung: delapan ratus kilogram per meter kubik.
+pascal-00	Tekan fluida di dalam wadah tertutup, dan tambahan tekanan itu diteruskan ke seluruh bagian fluida. Inilah hukum Paskal.
+pascal-01	Sekarang buat dua piston: satu kecil, satu besar, terhubung oleh cairan yang sama.
+pascal-02	Tekanan di bawah keduanya sama, jadi ef satu per a satu sama dengan ef dua per a dua.
+pascal-03	Piston kecil lima sentimeter persegi, piston besar dua ratus sentimeter persegi. Luasnya empat puluh kali lipat.
+pascal-04	Gaya seratus newton pada piston kecil cukup untuk menahan beban empat ratus kilogram di piston besar.
+pascal-05	Tetapi tidak ada keuntungan gratis. Volume cairan tetap, jadi untuk mengangkat beban dua sentimeter, piston kecil harus turun delapan puluh sentimeter.
+pascal-06	Gaya diperbesar empat puluh kali, jarak diperkecil empat puluh kali. Usaha yang masuk sama dengan usaha yang keluar.
+pascal-07	Ingat video sebelumnya: energi tidak bisa diciptakan. Mesin hidraulik hanya menukar gaya dengan jarak.
+archimedes-00	Konon, Arkimedes berteriak eureka di bak mandi ketika menyadari tubuhnya memindahkan air.
+archimedes-01	Tetapi dari mana sebenarnya gaya yang mendorong benda ke atas? Jawabannya ada pada hidrostatika.
+archimedes-02	Letakkan sebuah balok di dalam air. Permukaan bawahnya lebih dalam daripada permukaan atasnya.
+archimedes-03	Jadi tekanan dari bawah lebih besar daripada tekanan dari atas. Dorongan di sisi kiri dan kanan saling meniadakan.
+archimedes-04	Selisihnya adalah gaya apung: ro fluida, kali ge, kali volume yang tercelup.
+archimedes-05	Dan ro ge fe tidak lain adalah berat fluida yang dipindahkan. Inilah hukum Arkimedes.
+archimedes-06	Perhatikan: yang dipakai adalah massa jenis fluidanya, bukan massa jenis bendanya.
+archimedes-07	Karena tekanan atas dan bawah naik bersama, gaya apung tidak bertambah walaupun benda diturunkan lebih dalam.
+apparent-00	Gantung sebongkah aluminium satu kilogram pada neraca pegas. Di udara, neraca menunjukkan sepuluh newton.
+apparent-01	Celupkan seluruhnya ke dalam air, dan angkanya turun.
+apparent-02	Volume aluminium itu satu per dua ribu tujuh ratus meter kubik, sehingga air yang dipindahkan menghasilkan gaya apung tiga koma tujuh newton.
+apparent-03	Neraca kini hanya membaca enam koma tiga newton. Inilah berat semu.
+apparent-04	Massanya tidak berkurang sedikit pun. Yang berubah hanyalah gaya yang dibutuhkan untuk menahannya, karena air ikut membantu menopang.
+apparent-05	Trik ini dipakai untuk mengukur massa jenis benda berbentuk rumit: timbang di udara, timbang di air, dan selisihnya memberi volumenya.
+floating-00	Kapan benda terapung? Bandingkan saja massa jenis benda dengan massa jenis fluida.
+floating-01	Jika lebih kecil, benda terapung. Jika sama, benda melayang. Jika lebih besar, benda tenggelam.
+floating-02	Benda yang terapung tercelup sebagian saja, sampai berat air yang dipindahkan tepat sama dengan beratnya.
+floating-03	Fraksi yang tercelup sama dengan perbandingan massa jenis benda terhadap massa jenis fluida.
+floating-04	Balok kayu setinggi dua puluh sentimeter dengan massa jenis enam ratus tercelup dua belas sentimeter. Delapan sentimeter sisanya menyembul di atas air.
+floating-05	Sekarang kembali ke kapal baja. Baja memang tenggelam, tetapi lambung kapal berisi udara.
+floating-06	Yang menentukan adalah massa total kapal dibagi volume luarnya, dan rata-rata itu lebih kecil daripada massa jenis air.
+floating-07	Baut kecil tidak punya rongga udara, jadi massa jenis rata-ratanya tetap massa jenis baja. Ia tenggelam.
+floating-08	Ada batasnya: rakit bervolume nol koma lima meter kubik dan bermassa dua ratus kilogram hanya mampu membawa muatan tiga ratus kilogram sebelum tenggelam seluruhnya.
+surface-00	Serangga anggang-anggang bisa berjalan di atas air, dan sebatang jarum baja yang diletakkan hati-hati bisa mengapung.
+surface-01	Ini bukan gaya apung. Ini tegangan permukaan.
+surface-02	Di dalam air, setiap molekul ditarik tetangganya ke segala arah secara seimbang.
+surface-03	Molekul di permukaan hanya punya tetangga di bawah dan di samping, sehingga tertarik ke dalam. Permukaan air pun berperilaku seperti kulit yang tegang.
+surface-04	Tegangan permukaan, gama, adalah gaya per satuan panjang. Untuk air pada suhu kamar, nilainya sekitar nol koma nol tujuh dua newton per meter.
+surface-05	Memperluas permukaan membutuhkan usaha. Karena itulah tetesan air dan gelembung sabun cenderung bulat, bentuk dengan luas permukaan terkecil.
+surface-06	Lapisan sabun yang dibentangkan pada bingkai kawat punya dua permukaan, depan dan belakang, sehingga gayanya dua gama kali el.
+capillary-00	Celupkan pipa kaca yang sangat sempit ke dalam air. Air naik dengan sendirinya, melawan gravitasi.
+capillary-01	Molekul air lebih tertarik pada kaca daripada pada sesamanya, sehingga air membasahi dinding dan permukaannya melengkung naik.
+capillary-02	Sudut antara permukaan cairan dan dinding disebut sudut kontak, teta.
+capillary-03	Tegangan permukaan menarik sepanjang keliling pipa, dua pi er. Komponen ke atasnya menahan berat kolom air yang naik.
+capillary-04	Dari keseimbangan itu, tinggi kenaikan sama dengan dua gama kosinus teta, dibagi ro ge er.
+capillary-05	Pada pipa berjari-jari setengah milimeter, air naik hampir tiga sentimeter. Makin sempit pipa, makin tinggi air memanjat.
+capillary-06	Raksa berbeda: ia lebih tertarik pada sesamanya, sudut kontaknya lebih dari sembilan puluh derajat, sehingga permukaannya justru turun di dalam pipa.
+strategy-00	Bagaimana menaklukkan soal fluida statis? Gunakan urutan berpikir ini.
+strategy-01	Satu: gambar wadah, cairan, dan titik-titik yang ditanyakan. Tandai kedalaman secara vertikal.
+strategy-02	Dua: tentukan apakah yang diminta tekanan mutlak atau tekanan ukur.
+strategy-03	Tiga: untuk tekanan, telusuri jalur di dalam cairan yang terhubung, tambah ro ge ha saat turun, kurangi saat naik.
+strategy-04	Empat: untuk benda di dalam fluida, gambar diagram gaya: berat, gaya apung, dan gaya tali atau penopang.
+strategy-05	Lima: periksa satuan. Sentimeter persegi harus diubah ke meter persegi dengan faktor sepuluh pangkat minus empat.
+strategy-06	Coba soal ini: benda bermassa jenis sembilan ratus melayang di antara lapisan minyak delapan ratus dan air seribu. Berapa bagian volumenya yang berada di air?
+strategy-07	Gaya apung total adalah jumlah dari kedua cairan: delapan ratus kali satu minus ef, ditambah seribu kali ef, sama dengan sembilan ratus.
+strategy-08	Hasilnya ef sama dengan setengah. Masuk akal, karena sembilan ratus tepat di tengah antara delapan ratus dan seribu.
+hydrometer-00	Di laboratorium kimia, massa jenis adalah sidik jari sederhana sebuah larutan.
+hydrometer-01	Hidrometer adalah pelampung kaca berskala. Ia tenggelam lebih dalam pada cairan yang kurang rapat, dan menyembul lebih tinggi pada cairan yang lebih rapat.
+hydrometer-02	Prinsipnya murni Arkimedes: pelampung tercelup sampai berat cairan yang dipindahkan sama dengan beratnya.
+hydrometer-03	Dengan cara ini, kadar gula dalam nira, kadar alkohol hasil fermentasi, atau kepekatan asam di aki dapat diperkirakan tanpa reaksi kimia apa pun.
+hydrometer-04	Larutan gula yang lebih pekat lebih rapat, sehingga hidrometer menyembul lebih tinggi.
+hydrometer-05	Cairan yang tidak bercampur pun dapat dipisahkan dengan corong pisah: lapisan yang lebih rapat selalu berada di bawah.
+soap-00	Mengapa tegangan permukaan air begitu besar dibanding cairan lain? Jawabannya ikatan hidrogen.
+soap-01	Setiap molekul air dapat membentuk ikatan hidrogen dengan tetangganya. Jaringan tarik-menarik inilah yang membuat kulit air kuat.
+soap-02	Sabun dan deterjen adalah surfaktan. Molekulnya punya kepala yang suka air dan ekor yang menghindari air.
+soap-03	Molekul surfaktan berkumpul di permukaan dan menyisip di antara molekul air, memutus sebagian tarikan itu. Tegangan permukaan pun turun.
+soap-04	Teteskan sabun di dekat jarum yang mengapung, dan jarum itu segera tenggelam.
+soap-05	Dengan tegangan permukaan yang lebih rendah, air lebih mudah membasahi kain dan menyusup ke celah kotoran. Itulah mengapa sabun membantu mencuci.
+chroma-00	Kapilaritas bekerja setiap hari di laboratorium kimia, misalnya pada kromatografi kertas dan kromatografi lapis tipis.
+chroma-01	Ujung kertas dicelupkan ke dalam pelarut. Pelarut merambat naik melalui celah-celah sempit di antara serat kertas.
+chroma-02	Ini kapilaritas yang sama: pori-pori kecil berperan sebagai jutaan pipa kapiler.
+chroma-03	Saat pelarut naik, ia membawa campuran zat. Zat yang lebih tertarik pada pelarut ikut terbawa jauh, zat yang lebih tertarik pada kertas tertinggal.
+chroma-04	Campuran tinta pun terpisah menjadi pita-pita warna.
+chroma-05	Perbandingan jarak tempuh zat terhadap jarak tempuh pelarut disebut nilai er ef, yang khas untuk setiap zat pada kondisi tertentu.
+submarine-00	Kapal selam mengendalikan naik turunnya dengan tangki pemberat.
+submarine-01	Untuk menyelam, tangki diisi air laut. Massa total bertambah, massa jenis rata-ratanya melebihi air laut, dan kapal turun.
+submarine-02	Untuk naik, udara bertekanan mendorong air keluar dari tangki. Kapal menjadi lebih ringan dan naik.
+submarine-03	Di kedalaman seratus meter, tekanan air sekitar sebelas kali tekanan atmosfer. Lambung kapal harus menahan dorongan sekitar satu juta newton di setiap meter persegi.
+submarine-04	Di palung terdalam, sekitar sebelas kilometer di bawah permukaan, tekanannya lebih dari seribu kali tekanan atmosfer.
+submarine-05	Ikan-ikan laut dalam bertahan karena tubuhnya hampir tanpa rongga udara. Tekanan di dalam dan di luar tubuhnya seimbang.
+blood-00	Saat dokter mengukur tekanan darah, angkanya ditulis dalam milimeter raksa, misalnya seratus dua puluh per delapan puluh.
+blood-01	Satuan ini berasal dari barometer Toriceli: tabung kaca berisi raksa yang dibalik ke dalam wadah raksa.
+blood-02	Raksa turun sampai tingginya sekitar tujuh ratus enam puluh milimeter. Di atasnya hampir hampa, dan berat kolom raksa itu diimbangi tekanan atmosfer.
+blood-03	Raksa dipilih karena sangat rapat. Jika memakai air, tabungnya harus setinggi lebih dari sepuluh meter.
+blood-04	Tekanan darah seratus dua puluh milimeter raksa berarti tekanan ukur sekitar enam belas ribu paskal, cukup untuk mendorong kolom air setinggi sekitar satu koma enam meter.
+blood-05	Itu sebabnya tekanan darah diukur setinggi jantung. Jika lengan diangkat ke atas kepala, tekanan di lengan berkurang menurut ro ge ha.
+blood-06	Infus pun memanfaatkan hidrostatika: kantong cairan digantung tinggi agar tekanannya mampu mengalahkan tekanan darah di pembuluh vena.
+iceberg-00	Ungkapan puncak gunung es punya dasar fisika.
+iceberg-01	Es bermassa jenis sekitar sembilan ratus tujuh belas kilogram per meter kubik, lebih kecil daripada air. Inilah keanehan air: wujud padatnya lebih ringan daripada wujud cairnya.
+iceberg-02	Penyebabnya lagi-lagi ikatan hidrogen, yang menata molekul es dalam kisi heksagonal yang lapang.
+iceberg-03	Di air laut yang bermassa jenis sekitar seribu dua puluh lima, fraksi yang tercelup sama dengan sembilan ratus tujuh belas dibagi seribu dua puluh lima, sekitar delapan puluh sembilan persen.
+iceberg-04	Hanya sekitar sebelas persen yang terlihat. Sisanya tersembunyi di bawah air, dan bagian tak terlihat seperti itulah yang merobek lambung Titanic pada tahun seribu sembilan ratus dua belas.
+iceberg-05	Karena es mengapung, danau membeku dari atas. Lapisan es melindungi air di bawahnya, sehingga ikan tetap hidup sepanjang musim dingin.
+recap-00	Mari rangkum.
+recap-01	Massa jenis adalah massa per volume, dan menentukan siapa yang mengapung.
+recap-02	Tekanan adalah gaya per luas, mendorong ke segala arah, dan bertambah ro ge ha setiap kita turun sedalam ha.
+recap-03	Hukum Paskal meneruskan tekanan ke seluruh fluida tertutup, sehingga gaya kecil dapat menahan beban besar dengan menukar jarak.
+recap-04	Gaya apung sama dengan berat fluida yang dipindahkan, lahir dari selisih tekanan atas dan bawah.
+recap-05	Tegangan permukaan dan kapilaritas muncul dari tarik-menarik antarmolekul.
+recap-06	Jadi, setiap kali melihat sesuatu mengapung, tertekan, atau memanjat, tanyakan: di mana tekanannya lebih besar, dan ke mana dorongannya?
