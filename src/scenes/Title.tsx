@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill} from 'remotion';
+import {AbsoluteFill, Img, staticFile} from 'remotion';
 import {BACK, EASE_IN_OUT, cyc, ramp, rand} from '../anim';
 import {Bubbles, PressureArrow, Water, WaterMolecule} from '../components/fluid';
 import {Glow, Ripple, Stage, Twinkles} from '../components/primitives';
@@ -17,6 +17,7 @@ export const Title: React.FC = () => {
   const {t, dur} = useScene();
   const a = ramp(t, 0.2, 1.4);
   const sub = ramp(t, 1.5, 2.5);
+  const brand = ramp(t, 2.6, 3.6);
   const out = 1 - ramp(t, dur - 1.0, dur - 0.1, EASE_IN_OUT);
   const push = 1 + 0.035 * ramp(t, -0.8, dur, EASE_IN_OUT);
   const ring = ramp(t, 0.4, 2.2);
@@ -111,7 +112,27 @@ export const Title: React.FC = () => {
           </div>
           <div style={{fontFamily: FONT.head, fontSize: 50, color: C.ink, fontWeight: 500, marginTop: 8, opacity: sub, translate: `0px ${(1 - sub) * 16}px`}}>{BRAND.subtitle}</div>
           <div style={{fontFamily: FONT.sans, fontSize: 26, color: C.muted, marginTop: 14, opacity: ramp(t, 2.1, 3.1)}}>{BRAND.course}</div>
-          <div style={{fontFamily: FONT.mono, fontSize: 22, color: C.press, marginTop: 70, opacity: ramp(t, 4.2, 5.2), letterSpacing: 3 + 2 * (1 - ramp(t, 4.2, 5.6))}}>mendorong dari segala arah</div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 16,
+              marginTop: 34,
+              padding: '10px 26px 10px 14px',
+              borderRadius: 999,
+              border: '1.5px solid rgba(120,190,255,0.35)',
+              background: 'rgba(10,24,56,0.55)',
+              opacity: brand,
+              translate: `0px ${(1 - brand) * 14}px`,
+              boxShadow: `0 0 ${24 + 10 * Math.sin(t * 1.8)}px rgba(58,168,255,0.25)`,
+            }}
+          >
+            <Img src={staticFile('scientian-logo.png')} style={{width: 46, height: 46, rotate: `${4 * Math.sin(t * 0.9)}deg`}} />
+            <div style={{fontFamily: FONT.head, fontSize: 30, color: C.ink, fontWeight: 500, letterSpacing: 2}}>
+              Explore <span style={{color: C.gold, fontWeight: 600}}>Science</span> with Yayan
+            </div>
+          </div>
+          <div style={{fontFamily: FONT.mono, fontSize: 22, color: C.press, marginTop: 40, opacity: ramp(t, 4.2, 5.2), letterSpacing: 3 + 2 * (1 - ramp(t, 4.2, 5.6))}}>mendorong dari segala arah</div>
         </AbsoluteFill>
       </AbsoluteFill>
     </AbsoluteFill>

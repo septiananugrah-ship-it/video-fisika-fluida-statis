@@ -50,6 +50,7 @@ export const Pascal: React.FC = () => {
   // ---------- fase 2 ----------
   const liftIn = ramp(t, cue(1) + 0.2, cue(1) + 1.2);
   const pistIn = ramp(t, wordOf(1, 'piston') - 0.2, wordOf(1, 'piston') + 0.8, BACK);
+  const twoP = win(t, wordOf(1, 'piston') + 0.2, wordOf(2, 'F') - 0.9, 0.6, 0.5);
   const eqP = win(t, cue(2) + 0.2, cue(3) + 0.6, 0.6, 0.6);
   const f2 = win(t, wordOf(2, 'F') - 0.4, cue(4) - 0.2, 0.6, 0.5);
   const aLab = win(t, cue(3) + 0.1, cue(5) - 0.2, 0.6, 0.5);
@@ -58,7 +59,7 @@ export const Pascal: React.FC = () => {
   const gridFill = ramp(t, wordOf(3, 'empat') - 0.6, cueEnd(3) + 0.3, (x) => x);
   const tDrop = wordOf(4, 'beban');
   const carDrop = ramp(t, tDrop - 0.9, tDrop + 0.1, (x) => x * x);
-  const carIn = ramp(t, tDrop - 0.9, tDrop - 0.5);
+  const carIn = ramp(t, tDrop - 0.9, tDrop - 0.3);
   const f100 = ramp(t, wordOf(4, 'seratus') - 0.4, wordOf(4, 'seratus') + 0.3);
   const f4 = win(t, wordOf(4, 'seratus') - 0.2, cue(5) + 0.4, 0.6, 0.5);
   const pumpA = wordOf(5, 'mengangkat') - 0.2;
@@ -77,7 +78,7 @@ export const Pascal: React.FC = () => {
 
   const y1 = Y0 + 240 * pump; // dasar piston kecil
   const y2 = Y0 - 6 * pump - 1.2 * Math.sin(t * 1.6) * ramp(t, tDrop, tDrop + 1) * (1 - pumpRate); // dasar piston besar
-  const carY = y2 - 40 - 340 * (1 - carDrop) + (t > tDrop + 0.1 ? -5 * Math.exp(-(t - tDrop - 0.1) * 5) * Math.sin((t - tDrop - 0.1) * 20) : 0);
+  const carY = y2 - 40 - 150 * (1 - carDrop) + (t > tDrop + 0.1 ? -5 * Math.exp(-(t - tDrop - 0.1) * 5) * Math.sin((t - tDrop - 0.1) * 20) : 0);
 
   return (
     <AbsoluteFill>
@@ -264,7 +265,7 @@ export const Pascal: React.FC = () => {
             <g opacity={carIn}>
               <ellipse cx={LX} cy={y2 - 40} rx={130 * (0.4 + 0.6 * carDrop)} ry={7} fill="#000" opacity={0.4 * carDrop} />
               <Car x={LX} y={carY} scale={1.1} color={C.force} wheel={0} />
-              <Label x={LX} y={carY - 170} size={28} color={C.force} weight={600}>
+              <Label x={LX} y={carY - 170} size={28} color={C.force} weight={600} opacity={ramp(carDrop, 0.75, 1)}>
                 400 kg · 4000 N
               </Label>
               <Ripple x={LX} y={y2 - 40} p={ramp(t, tDrop + 0.05, tDrop + 1.2)} r={200} color="force" />
@@ -351,6 +352,11 @@ export const Pascal: React.FC = () => {
         <span style={{color: C.press}}>Hukum Pascal</span>: tambahan tekanan
         <br />
         diteruskan ke seluruh bagian fluida
+      </Note>
+      <Note x={1460} y={300} p={twoP} color={C.cyan} size={32}>
+        dua piston: <span style={{color: C.gold}}>kecil</span> &amp; <span style={{color: C.gold}}>besar</span>
+        <br />
+        satu cairan yang <span style={{color: C.cyan}}>sama</span>
       </Note>
       <Formula x={1460} y={300} p={f2 * ph2} accent={C.press} size={64}>
         <Frac n={<V>F₁</V>} d={<V>A₁</V>} /> = <Frac n={<V>F₂</V>} d={<V>A₂</V>} />

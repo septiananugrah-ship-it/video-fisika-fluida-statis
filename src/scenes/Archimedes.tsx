@@ -253,7 +253,7 @@ export const Archimedes: React.FC = () => {
               <Label x={BX + 34} y={yTop + BS / 2 - 90} size={44} color={C.buoy} weight={700} anchor="start" opacity={qMark * (1 - buoy)}>
                 ?
               </Label>
-              <Label x={BX - 84} y={yTop - 60} size={30} color={C.buoy} weight={600} anchor="end" opacity={buoy}>
+              <Label x={BX - BS / 2 - 40} y={yTop - 44} size={30} color={C.buoy} weight={600} anchor="end" opacity={buoy}>
                 <tspan fontFamily={FONT.serif} fontStyle="italic">F</tspan>
                 <tspan baselineShift="sub" fontSize="0.65em">A</tspan>
                 {`  ${fmt(FA)} N`}
