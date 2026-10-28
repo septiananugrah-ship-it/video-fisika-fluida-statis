@@ -50,6 +50,7 @@ export const Pascal: React.FC = () => {
   // ---------- fase 2 ----------
   const liftIn = ramp(t, cue(1) + 0.2, cue(1) + 1.2);
   const pistIn = ramp(t, wordOf(1, 'piston') - 0.2, wordOf(1, 'piston') + 0.8, BACK);
+  const twoP = win(t, wordOf(1, 'piston') + 0.2, wordOf(2, 'F') - 0.9, 0.6, 0.5);
   const eqP = win(t, cue(2) + 0.2, cue(3) + 0.6, 0.6, 0.6);
   const f2 = win(t, wordOf(2, 'F') - 0.4, cue(4) - 0.2, 0.6, 0.5);
   const aLab = win(t, cue(3) + 0.1, cue(5) - 0.2, 0.6, 0.5);
@@ -351,6 +352,11 @@ export const Pascal: React.FC = () => {
         <span style={{color: C.press}}>Hukum Pascal</span>: tambahan tekanan
         <br />
         diteruskan ke seluruh bagian fluida
+      </Note>
+      <Note x={1460} y={300} p={twoP} color={C.cyan} size={32}>
+        dua piston: <span style={{color: C.gold}}>kecil</span> &amp; <span style={{color: C.gold}}>besar</span>
+        <br />
+        satu cairan yang <span style={{color: C.cyan}}>sama</span>
       </Note>
       <Formula x={1460} y={300} p={f2 * ph2} accent={C.press} size={64}>
         <Frac n={<V>F₁</V>} d={<V>A₁</V>} /> = <Frac n={<V>F₂</V>} d={<V>A₂</V>} />
