@@ -742,7 +742,7 @@ const PhaseD: React.FC<{op: number}> = ({op}) => {
         <Ripple x={RX} y={SURF_D} p={ramp(t, tk[5] + 0.2, tk[5] + 1.6, (q) => q)} r={300} color="heat" />
         <g opacity={full}>
           <line x1={RX - RW / 2 - 20} y1={SURF_D} x2={RX + RW / 2 + 20} y2={SURF_D} stroke={C.heat} strokeWidth={3} strokeDasharray="10 8" strokeDashoffset={-t * 14} />
-          <Label x={RX + RW / 2 + 30} y={SURF_D - 30} size={26} color={C.heat} anchor="start" weight={700}>
+          <Label x={RX} y={SURF_D + RH + 40} size={28} color={C.heat} weight={700}>
             tercelup penuh!
           </Label>
         </g>

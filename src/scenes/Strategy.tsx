@@ -269,7 +269,7 @@ export const Strategy: React.FC = () => {
               <line x1={CX - CUBE / 2} y1={IFACE} x2={CX + CUBE / 2} y2={IFACE} stroke="#fff" strokeWidth={2} strokeDasharray="6 5" />
             </g>
             <rect x={CX - CUBE / 2 + 8} y={cTop + 6} width={CUBE - 16} height={8} rx={4} fill="#fff" opacity={0.2} />
-            <Label x={CX - CUBE / 2 - 14} y={cy} size={26} color={C.ink} weight={600} font="serif" anchor="end">
+            <Label x={CX - CUBE / 2 - 14} y={cTop + 24} size={26} color={C.ink} weight={600} font="serif" anchor="end">
               <tspan fill={C.spr} fontStyle="italic">
                 ρ
               </tspan>{' '}
