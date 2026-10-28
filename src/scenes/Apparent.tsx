@@ -16,7 +16,7 @@ const HX = 600; // sumbu neraca
 const KPX = 22; // px per N
 const BW = 110; // sisi balok
 const BKW = 260; // lebar dalam gelas
-const DEPTH = 190; // kedalaman air gelas (tanpa balok)
+const DEPTH = 160; // kedalaman air gelas (tanpa balok)
 const JBASE = 860;
 
 /** Dongkrak gunting: lengan sepanjang L, lebar menyesuaikan tinggi (geometri nyata). */
@@ -68,7 +68,7 @@ export const Apparent: React.FC = () => {
   // baris 5: timbang di udara (gelas turun) lalu di air (gelas naik lagi)
   const out5 = ramp(t, wordOf(5, 'udara') - 0.6, wordOf(5, 'udara') + 0.6, EASE_IN_OUT);
   const in5 = ramp(t, wordOf(5, 'air') - 0.6, wordOf(5, 'air') + 0.6, EASE_IN_OUT);
-  const u = -0.3 + 1.55 * dip1 - 1.55 * out5 + 1.55 * in5;
+  const u = -0.45 + 1.7 * dip1 - 1.7 * out5 + 1.7 * in5;
   const f = Math.max(0, Math.min(1, u));
   const FA = 3.7 * f;
   const T = 10 - FA;
@@ -81,7 +81,7 @@ export const Apparent: React.FC = () => {
   const rise = (BW * BW * f) / BKW;
   const glassBot = ys + rise + DEPTH;
   const glassTop = Math.min(ys - 40, glassBot - DEPTH - 70);
-  const contact = cue(1) + 0.2 + (cueEnd(1) + 0.4 - cue(1)) * (0.3 / 1.55);
+  const contact = cue(1) + 0.2 + (cueEnd(1) + 0.4 - cue(1)) * (0.45 / 1.7);
 
   // ---------- narasi ----------
   const wLab = win(t, cue(0) + 0.6, cue(2), 0.6, 0.6);
@@ -90,7 +90,7 @@ export const Apparent: React.FC = () => {
   const buoyVis = ramp(t, contact, contact + 0.4);
   const f2 = win(t, cue(2) + 0.2, cue(4) - 0.2, 0.6, 0.5);
   const f2b = ramp(t, wordOf(2, 'gaya') - 0.3, wordOf(2, 'gaya') + 0.5);
-  const semu = win(t, wordOf(3, 'enam') - 0.3, cue(5) - 0.2, 0.5, 0.5);
+  const semu = win(t, wordOf(3, 'enam') - 0.3, cue(4) - 0.1, 0.5, 0.5);
   const semuB = ramp(t, wordOf(3, 'semu') - 0.3, wordOf(3, 'semu') + 0.4);
   const fbd = win(t, cue(4) + 0.1, cue(5) - 0.1, 0.7, 0.5);
   const massB = ramp(t, wordOf(4, 'Massanya') - 0.3, wordOf(4, 'Massanya') + 0.5);
@@ -126,7 +126,7 @@ export const Apparent: React.FC = () => {
               ) : null}
             </g>
           ))}
-          <Label x={HX - 50} y={174 + 0} size={18} font="mono" color={C.muted} anchor="end">
+          <Label x={HX - 50} y={448} size={18} font="mono" color={C.muted} anchor="end">
             N
           </Label>
           <rect x={HX - 34} y={ptrY - 3} width={68} height={6} rx={3} fill={C.press} />
@@ -216,22 +216,22 @@ export const Apparent: React.FC = () => {
 
           {/* diagram benda bebas */}
           <g opacity={fbd}>
-            <rect x={1250} y={460} width={400} height={400} rx={18} fill="rgba(10,16,36,0.78)" stroke={C.line} strokeWidth={2} />
-            <Label x={1450} y={490} size={22} color={C.muted}>
+            <rect x={1250} y={452} width={400} height={418} rx={18} fill="rgba(10,16,36,0.78)" stroke={C.line} strokeWidth={2} />
+            <Label x={1450} y={478} size={22} color={C.muted}>
               diagram benda bebas
             </Label>
             <rect x={1405} y={600} width={90} height={90} rx={8} fill="#aeb8cf" stroke="#eef3ff" strokeWidth={3} />
-            <Arrow x1={1430} y1={600} x2={1430} y2={600 - 6.3 * 20} color="ink" width={6} />
-            <Label x={1414} y={540} size={26} font="serif" italic color={C.ink} anchor="end">
+            <Arrow x1={1430} y1={600} x2={1430} y2={600 - 6.3 * 16} color="ink" width={6} />
+            <Label x={1414} y={548} size={26} font="serif" italic color={C.ink} anchor="end">
               T
             </Label>
-            <Arrow x1={1475} y1={645} x2={1475} y2={645 - 3.7 * 20} color="buoy" width={6} />
-            <Label x={1492} y={590} size={26} font="serif" italic color={C.buoy} anchor="start">
+            <Arrow x1={1475} y1={645} x2={1475} y2={645 - 3.7 * 16} color="buoy" width={6} />
+            <Label x={1492} y={598} size={26} font="serif" italic color={C.buoy} anchor="start">
               <tspan>F</tspan>
               <tspan baselineShift="sub" fontSize="0.65em">A</tspan>
             </Label>
-            <Arrow x1={1450} y1={690} x2={1450} y2={690 + 10 * 14} color="force" width={6} />
-            <Label x={1470} y={800} size={26} font="serif" italic color={C.force} anchor="start">
+            <Arrow x1={1450} y1={690} x2={1450} y2={690 + 10 * 16} color="force" width={6} />
+            <Label x={1470} y={810} size={26} font="serif" italic color={C.force} anchor="start">
               mg
             </Label>
             <Label x={1300} y={640} size={22} font="mono" color={C.ink} anchor="start">
@@ -240,7 +240,7 @@ export const Apparent: React.FC = () => {
             <Label x={1610} y={640} size={22} font="mono" color={C.buoy} anchor="end">
               3,70 N
             </Label>
-            <Label x={1580} y={800} size={22} font="mono" color={C.force} anchor="start">
+            <Label x={1540} y={810} size={22} font="mono" color={C.force} anchor="start">
               10 N
             </Label>
           </g>
@@ -252,13 +252,13 @@ export const Apparent: React.FC = () => {
         </g>
       </Stage>
 
-      <Badge x={330} y={300} text="aluminium 1 kg" color={C.ink} size={24} opacity={inA * ramp(t, cue(0) + 0.4, cue(0) + 1.0) * (1 - massB)} />
-      <Badge x={330} y={300} text="massa tetap 1 kg" color={C.gold} size={26} opacity={massB} scale={0.9 + 0.1 * ramp(t, wordOf(4, 'Massanya') - 0.3, wordOf(4, 'Massanya') + 0.4, BACK)} />
+      <Badge x={200} y={300} text="aluminium 1 kg" color={C.ink} size={24} opacity={inA * ramp(t, cue(0) + 0.4, cue(0) + 1.0) * (1 - massB)} />
+      <Badge x={200} y={300} text="massa tetap 1 kg" color={C.gold} size={26} opacity={massB} scale={0.9 + 0.1 * ramp(t, wordOf(4, 'Massanya') - 0.3, wordOf(4, 'Massanya') + 0.4, BACK)} />
       <Formula x={1400} y={300} p={f0} accent={C.force} size={60}>
         <V>W</V> = <V>mg</V> = 1 · 10 = <span style={{color: C.force}}>10 N</span>
       </Formula>
-      <Formula x={1400} y={310} p={f2} accent={C.buoy} size={56}>
-        <V>V</V> = <Frac n="1" d="2700" /> m³ ≈ 3,70×10<Sup>−4</Sup> m³
+      <Formula x={1380} y={310} p={f2} accent={C.buoy} size={56}>
+        <V>V</V> = <Frac n="1" d="2700" /> ≈ 3,70×10<Sup>−4</Sup> m³
         <div style={{fontSize: 46, opacity: f2b, marginTop: 6}}>
           <V color="buoy">F</V>
           <Sub color={C.buoy}>A</Sub> = 1000 · 10 · <V>V</V> = <span style={{color: C.buoy}}>3,70 N</span>
@@ -269,7 +269,7 @@ export const Apparent: React.FC = () => {
         <V>T</V> + <V color="buoy">F</V>
         <Sub color={C.buoy}>A</Sub> = <V color="force">mg</V>
       </Formula>
-      <Badge x={1180} y={600} text="air ikut menopang" color={C.buoy} size={24} opacity={help * fbd} />
+      <Badge x={1450} y={412} text="air ikut menopang" color={C.buoy} size={24} opacity={help * fbd} />
       <Formula x={1400} y={330} p={f5} accent={C.spr} size={56}>
         <V>V</V> = <Frac n={<span>W<Sub>udara</Sub> − W<Sub>air</Sub></span>} d={<span>ρ<Sub>air</Sub> g</span>} />
         <div style={{fontSize: 40, fontFamily: FONT.mono, opacity: f5b, marginTop: 6}}>

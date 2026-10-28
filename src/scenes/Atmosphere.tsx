@@ -163,7 +163,7 @@ export const Atmosphere: React.FC = () => {
   const breathe = 1 + 0.015 * Math.sin(t * 1.6);
 
   // ---------- fase C ----------
-  const sAbs = ramp(t, wordOf(3, 'mutlak') - 0.2, wordOf(3, 'mutlak') + 0.6);
+  const sAbs = ramp(t, cue(3) + 0.3, cue(3) + 1.1);
   const vac = ramp(t, wordOf(3, 'hampa') - 0.3, wordOf(3, 'hampa') + 0.5);
   const sGauge = ramp(t, wordOf(3, 'ukur', 2) - 0.2, wordOf(3, 'ukur', 2) + 0.9, EASE_IN_OUT);
   const atmLine = ramp(t, wordOf(3, 'sekitar') - 0.3, wordOf(3, 'sekitar') + 0.5);

@@ -73,6 +73,9 @@ export const Archimedes: React.FC = () => {
   const mat = cue(6) < t && t < cue(7) + 1 ? matCycle : 0;
   const matLab = win(t, cue(6) + 0.4, cue(7) - 0.1, 0.5, 0.5);
   const panel = ramp(t, cue(7) + 0.1, cue(7) + 0.8);
+  const fHydro = win(t, wordOf(1, 'hidrostatika') - 0.3, wordOf(4, 'Selisihnya') - 0.4, 0.6, 0.5);
+  const graph = win(t, cue(2) + 0.2, wordOf(4, 'Selisihnya') - 0.4, 0.7, 0.5);
+  const gDots = ramp(t, cue(3) - 0.2, cue(3) + 0.8);
 
   const hNow = Math.max(0, hTop);
   const Ftop = 400 * hNow;
@@ -189,10 +192,10 @@ export const Archimedes: React.FC = () => {
             <line x1={TX0 + 12} y1={220} x2={TX0 + 12} y2={TB - 20} stroke="#fff" strokeOpacity={0.12} strokeWidth={6} strokeLinecap="round" />
             {/* garis bentuk balok di dalam air agar tetap jelas */}
             <rect x={BX - BS / 2} y={yTop} width={BS} height={BS} rx={8} fill="none" stroke="#f1dfc4" strokeOpacity={0.75} strokeWidth={3} />
-            <Label x={BX} y={yTop + BS / 2} size={30} color="#fff3e0" weight={600} opacity={matLab * (1 - mat)}>
+            <Label x={BX} y={yBot + 108} size={30} color="#f1c890" weight={600} opacity={matLab * (1 - mat)}>
               kayu
             </Label>
-            <Label x={BX} y={yTop + BS / 2} size={30} color="#fff3e0" weight={600} opacity={matLab * mat}>
+            <Label x={BX} y={yBot + 108} size={30} color="#c9d2ee" weight={600} opacity={matLab * mat}>
               besi
             </Label>
             <Ripple x={BX} y={WS} p={splash} r={220} color="water" />
@@ -232,7 +235,7 @@ export const Archimedes: React.FC = () => {
                 );
               })}
               <g opacity={cancel * (1 - buoy)}>
-                <Label x={BX - BS / 2 - 70} y={yBot + 34} size={24} color={C.press} anchor="middle">
+                <Label x={BX} y={yBot + 108} size={24} color={C.press} anchor="middle">
                   ←→ saling meniadakan
                 </Label>
               </g>
@@ -250,7 +253,7 @@ export const Archimedes: React.FC = () => {
               <Label x={BX + 34} y={yTop + BS / 2 - 90} size={44} color={C.buoy} weight={700} anchor="start" opacity={qMark * (1 - buoy)}>
                 ?
               </Label>
-              <Label x={BX - 36} y={yTop - 64} size={30} color={C.buoy} weight={600} anchor="end" opacity={buoy}>
+              <Label x={BX - 84} y={yTop - 60} size={30} color={C.buoy} weight={600} anchor="end" opacity={buoy}>
                 <tspan fontFamily={FONT.serif} fontStyle="italic">F</tspan>
                 <tspan baselineShift="sub" fontSize="0.65em">A</tspan>
                 {`  ${fmt(FA)} N`}
@@ -309,11 +312,40 @@ export const Archimedes: React.FC = () => {
                   <tspan fontFamily={FONT.serif} fontStyle="italic">F</tspan>
                   <tspan baselineShift="sub" fontSize="0.65em">A</tspan>
                 </Label>
-                <Label x={1425} y={588} size={34} color={C.ink} weight={700} opacity={ramp(t, ghostB + 1.0, ghostB + 1.6)}>
-                  =
-                </Label>
                 <Twinkles x={1440} y={700} rx={160} ry={90} n={5} color="buoy" />
               </g>
+            </g>
+
+            {/* grafik p = ρgh, sumbu kedalaman sejajar tangki */}
+            <g opacity={graph}>
+              <line x1={1150} y1={WS} x2={1150} y2={TB} stroke={C.muted} strokeWidth={3} />
+              <line x1={1150} y1={WS} x2={1720} y2={WS} stroke={C.muted} strokeWidth={3} markerEnd="url(#arrow-muted)" />
+              <Label x={1700} y={WS - 28} size={26} font="serif" italic color={C.press} anchor="end">
+                p
+              </Label>
+              <Label x={1124} y={TB - 10} size={26} font="serif" italic color={C.ink} anchor="end">
+                h
+              </Label>
+              <line x1={1150} y1={WS} x2={1150 + 500} y2={TB} stroke={C.press} strokeWidth={5} strokeLinecap="round" />
+              {[
+                {y: yTop, l: 'p₁'},
+                {y: yBot, l: 'p₂'},
+              ].map((d) => {
+                const x = 1150 + (500 * (d.y - WS)) / (TB - WS);
+                return (
+                  <g key={d.l} opacity={gDots}>
+                    <line x1={TX1 + 10} y1={d.y} x2={x} y2={d.y} stroke={C.press} strokeOpacity={0.5} strokeWidth={2} strokeDasharray="5 7" strokeDashoffset={-t * 12} />
+                    <line x1={1150} y1={d.y} x2={x} y2={d.y} stroke={C.press} strokeWidth={8} strokeOpacity={0.5} />
+                    <circle cx={x} cy={d.y} r={8} fill={C.press} stroke="#fff" strokeWidth={2} />
+                    <Label x={x + 22} y={d.y} size={28} font="serif" italic color={C.press} weight={600} anchor="start">
+                      {d.l}
+                    </Label>
+                  </g>
+                );
+              })}
+              <Label x={1380} y={TB - 30} size={24} color={C.muted} opacity={gDots}>
+                lebih dalam → tekanan lebih besar
+              </Label>
             </g>
 
             {/* lebih dalam: atas & bawah naik bersama */}
@@ -350,6 +382,10 @@ export const Archimedes: React.FC = () => {
         ) : null}
       </Stage>
 
+      <Formula x={1560} y={340} p={fHydro * ph2} accent={C.press} size={64}>
+        <V color="press">p</V> = <V color="spr">ρ</V>
+        <V>gh</V>
+      </Formula>
       <Formula x={1420} y={300} p={f4 * ph2} accent={C.buoy} size={64}>
         <V color="buoy">F</V>
         <Sub color={C.buoy}>A</Sub> = <V color="spr">ρ</V>

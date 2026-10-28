@@ -355,9 +355,9 @@ export const Pascal: React.FC = () => {
       <Formula x={1460} y={300} p={f2 * ph2} accent={C.press} size={64}>
         <Frac n={<V>F₁</V>} d={<V>A₁</V>} /> = <Frac n={<V>F₂</V>} d={<V>A₂</V>} />
       </Formula>
-      <Formula x={1460} y={300} p={f4 * ph2} accent={C.force} size={58}>
+      <Formula x={1440} y={300} p={f4 * ph2} accent={C.force} size={58}>
         <V>F</V>
-        <Sub>1</Sub> = <Frac n="5" d="200" /> · 4000 N = <span style={{color: C.force}}>100 N</span>
+        <Sub>1</Sub> = <Frac n="5" d="200" /> · 4000 = <span style={{color: C.force}}>100 N</span>
       </Formula>
       <Formula x={1460} y={300} p={f6 * ph2} accent={C.work} size={58}>
         <V>F</V>

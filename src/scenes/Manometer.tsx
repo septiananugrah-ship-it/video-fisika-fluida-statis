@@ -147,6 +147,7 @@ export const Manometer: React.FC = () => {
   const trail: P[] = [1, 2, 3, 4, 5].map((k) => at(Math.max(dA, dDot - k * 9)));
 
   // baris 4–5
+  const fPush = win(t, tPush - 0.4, wordOf(4, 'tekanan') - 0.5, 0.6, 0.5);
   const eqGas = ramp(t, wordOf(4, 'beda') - 0.4, wordOf(4, 'beda') + 0.4);
   const fGas = ramp(t, wordOf(4, 'tekanan') - 0.3, wordOf(4, 'tekanan') + 0.5);
   const fGasNum = ramp(t, wordOf(4, 'ribu') - 0.3, wordOf(4, 'ribu') + 0.4);
@@ -480,6 +481,11 @@ export const Manometer: React.FC = () => {
         turun: <span style={{color: C.work}}>+ρgh</span>
         <span style={{display: 'inline-block', width: 50}} />
         naik: <span style={{color: C.heat}}>−ρgh</span>
+      </Formula>
+      <Formula x={1400} y={330} p={fPush * ph1} accent={C.press} size={60} caption="gas mendorong lebih kuat daripada udara luar">
+        <V color="press">p</V>
+        <Sub>gas</Sub> &gt; <V color="press">p</V>
+        <Sub>atm</Sub>
       </Formula>
       <Formula x={1400} y={330} p={fGas * ph1} accent={C.press} size={58} caption={<span style={{opacity: nManometer}}>manometer: tekanan tak terlihat → beda tinggi yang terbaca</span>}>
         <V>p</V>
