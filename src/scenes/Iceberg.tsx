@@ -440,7 +440,7 @@ export const Iceberg: React.FC = () => {
             <path d="M80,392 L200,398 C300,600 500,830 960,840 C1420,830 1620,600 1720,398 L1840,392 L1840,880 L80,880 Z" fill="#1a1b30" stroke="#5c5f8a" strokeWidth={2.5} />
             <path d="M80,392 L200,398 M1720,398 L1840,392" stroke="#eef6ff" strokeWidth={8} strokeLinecap="round" opacity={0.85} />
             <Person x={mix(700, 1200, 0.5 + 0.5 * Math.sin(t * 0.45))} y={400 - 2} phase={t * 2.2} scale={0.42} color={C.ink} opacity={ramp(iceH, 40, 60)} />
-            <Label x={960} y={340} size={26} color="#e6f5ff" opacity={ramp(iceH, 30, 60)}>
+            <Label x={960} y={292} size={26} color="#e6f5ff" opacity={ramp(iceH, 30, 60)}>
               lapisan es mengapung di atas
             </Label>
             <Label x={1440} y={490} size={24} color="#cfeaff" opacity={ramp(t, cue(5) + 2.4, cue(5) + 3.2)}>

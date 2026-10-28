@@ -168,7 +168,7 @@ export const Atmosphere: React.FC = () => {
   const sGauge = ramp(t, wordOf(3, 'ukur', 2) - 0.2, wordOf(3, 'ukur', 2) + 0.9, EASE_IN_OUT);
   const atmLine = ramp(t, wordOf(3, 'sekitar') - 0.3, wordOf(3, 'sekitar') + 0.5);
   const fAbs = ramp(t, cueEnd(3) - 0.8, cueEnd(3) + 0.2);
-  const tire = ramp(t, cue(4) - 0.2, cue(4) + 0.6);
+  const tire = ramp(t, cue(3) + 1.0, cue(3) + 2.0);
   const inflate = ramp(t, cue(4) + 0.3, wordOf(4, 'bar') + 0.3, EASE_IN_OUT);
   const absRead = ramp(t, wordOf(4, 'tiga') - 0.6, wordOf(4, 'tiga') + 0.4);
   const fNums = ramp(t, wordOf(4, 'tiga') - 0.1, wordOf(4, 'tiga') + 0.7);
