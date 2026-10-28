@@ -1,11 +1,11 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {EASE, EASE_IN_OUT, cyc, mix, ramp, rand, win} from '../anim';
+import {EASE, EASE_IN_OUT, cyc, mix, ramp, rand} from '../anim';
 import {Bubbles, Water, WaterMolecule, wavePath} from '../components/fluid';
 import {Person} from '../components/physics';
 import {Formula, Frac, Glow, Label, Motes, Note, Ripple, Spark, Stage, Sub, Twinkles, V} from '../components/primitives';
 import {useScene} from '../SceneContext';
-import {C, FONT} from '../theme';
+import {C} from '../theme';
 
 // Gunung es: 917/1025 ≈ 0,89 tercelup (garis air dihitung dari luas penampang poligon), kisi heksagonal es,
 // Titanic 1912 menggores bagian tersembunyi, danau membeku dari atas.
@@ -165,13 +165,13 @@ export const Iceberg: React.FC = () => {
   const tIn = cue(4) + 2.6;
   const tHit = Math.max(tIn + 4, wordOf(4, 'merobek'));
   const xcS = 760 + S * XC_L;
-  const xStop = xcS - 70;
-  // gerak melambat: posisi haluan mencapai titik sentuh tepat saat "merobek"
-  const uHit = ramp(t, tIn, tHit, (x) => x);
-  const shipX = t < tHit ? mix(1900, xcS, 1 - (1 - uHit) * (1 - uHit) * 0.0 - (1 - uHit) * (1 - uHit) * 0 + 0) * 0 + mix(1900, xcS, EASE(uHit)) : mix(xcS, xStop, ramp(t, tHit, tHit + 1.6, EASE));
+  const xStop = xcS - 55;
+  // satu gerak melambat; titik sentuh (≈ 93 % lintasan) tercapai sekitar kata "merobek"
+  const tStop = tIn + (tHit - tIn) / 0.7;
+  const shipX = mix(1900, xStop, ramp(t, tIn, tStop, EASE));
   const gash = Math.max(0, xcS - shipX);
   const shipOp = ramp(t, tIn - 0.2, tIn + 0.8) * sea3;
-  const scrape = ramp(gash, 0, 6) * (1 - ramp(t, tHit + 1.6, tHit + 2.4));
+  const scrape = ramp(gash, 0, 6) * (1 - ramp(t, tStop - 0.6, tStop + 0.4));
 
   // danau
   const iceH = 60 * ramp(t, cue(5) + 0.3, cue(5) + 3.2, EASE_IN_OUT);
@@ -465,7 +465,6 @@ export const Iceberg: React.FC = () => {
       <Note x={1440} y={250} p={p5 * ramp(t, wordOf(5, 'ikan') - 0.3, wordOf(5, 'ikan') + 0.5)} color={C.cyan} size={28}>
         es = selimut → ikan tetap hidup
       </Note>
-      <div style={{position: 'absolute', left: 0, top: 0, fontFamily: FONT.mono, opacity: 0}} />
     </AbsoluteFill>
   );
 };
