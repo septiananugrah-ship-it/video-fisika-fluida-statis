@@ -1,9 +1,9 @@
 import React from 'react';
 import {AbsoluteFill, interpolateColors} from 'remotion';
-import {BACK, EASE_IN_OUT, cyc, mix, ramp, win} from '../anim';
+import {BACK, EASE_IN_OUT, mix, ramp, win} from '../anim';
 import {PressureArrow, Water, wavePath} from '../components/fluid';
 import {fmt} from '../components/physics';
-import {Arrow, Formula, Glow, Label, Motes, Note, Ripple, Spark, Stage, Stream, Sub, Twinkles, V} from '../components/primitives';
+import {Arrow, Formula, Glow, Label, Motes, Note, Ripple, Stage, Stream, Sub, Twinkles, V} from '../components/primitives';
 import {useScene} from '../SceneContext';
 import {C, FONT} from '../theme';
 
@@ -12,7 +12,6 @@ import {C, FONT} from '../theme';
 // F_atas = ρ g h A = 400·h N, F_bawah = 400·(h + 0,2) N → selisih selalu 80 N = ρ g V.
 // Panjang panah tekanan = 16 + 0,35·F px; panah apung (mint) 1,6 px/N.
 
-type P = [number, number];
 const WS = 250; // permukaan air tangki
 const TB = 850; // dasar dalam tangki
 const TX0 = 280;
@@ -347,7 +346,6 @@ export const Archimedes: React.FC = () => {
               </Label>
             </g>
             <Twinkles x={1640} y={748} rx={60} ry={30} n={3} color="buoy" opacity={ramp(hDeep, 0.6, 1) * panel} />
-            <Spark x={BX} y={WS} r={5} color="water" opacity={0} />
           </g>
         ) : null}
       </Stage>
@@ -399,9 +397,6 @@ export const Archimedes: React.FC = () => {
         <Sub>bawah</Sub> − <V>F</V>
         <Sub>atas</Sub> = 80 N
       </Formula>
-      <Note x={1330} y={620} p={0} color={C.cyan}>
-        {''}
-      </Note>
     </AbsoluteFill>
   );
 };

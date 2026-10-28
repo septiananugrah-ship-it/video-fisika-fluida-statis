@@ -238,7 +238,7 @@ const PhaseMolecules: React.FC<{op: number}> = ({op}) => {
         <Label x={GX0 - 90} y={GY0 - 100} size={24} color={C.muted} anchor="start">
           udara
         </Label>
-        <Label x={GX0 - 90} y={GY0 + ROWS * SP - 4} size={24} color={C.water} anchor="start">
+        <Label x={GX0 - 90} y={GY0 - 30} size={24} color={C.water} anchor="start">
           air
         </Label>
         {/* kulit tegang */}
@@ -258,9 +258,6 @@ const PhaseMolecules: React.FC<{op: number}> = ({op}) => {
             <Arrow key={k} x1={ix + 26 * Math.cos(a)} y1={iy + 26 * Math.sin(a)} x2={ix + 70 * Math.cos(a)} y2={iy + 70 * Math.sin(a)} color="cyan" width={4} pulse={false} />
           ))}
         </g>
-        <Label x={ix} y={iy + SP * 1.0 + 12} size={26} color={C.cyan} weight={700} opacity={inArr}>
-          ΣF = 0
-        </Label>
         {/* molekul permukaan: tarikan hanya ke samping & bawah */}
         <g opacity={suArr * (1 - 0.45 * res)}>
           {dirsS.map((a, k) => (

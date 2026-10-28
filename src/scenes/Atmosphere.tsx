@@ -165,7 +165,7 @@ export const Atmosphere: React.FC = () => {
   // ---------- fase C ----------
   const sAbs = ramp(t, wordOf(3, 'mutlak') - 0.2, wordOf(3, 'mutlak') + 0.6);
   const vac = ramp(t, wordOf(3, 'hampa') - 0.3, wordOf(3, 'hampa') + 0.5);
-  const sGauge = ramp(t, wordOf(3, 'ukur', 0) - 0.2, wordOf(3, 'ukur', 0) + 0.9, EASE_IN_OUT);
+  const sGauge = ramp(t, wordOf(3, 'ukur', 2) - 0.2, wordOf(3, 'ukur', 2) + 0.9, EASE_IN_OUT);
   const atmLine = ramp(t, wordOf(3, 'sekitar') - 0.3, wordOf(3, 'sekitar') + 0.5);
   const fAbs = ramp(t, cueEnd(3) - 0.8, cueEnd(3) + 0.2);
   const tire = ramp(t, cue(4) - 0.2, cue(4) + 0.6);

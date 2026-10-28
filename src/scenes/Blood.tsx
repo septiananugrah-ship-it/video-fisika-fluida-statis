@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
-import {EASE_IN_OUT, cyc, mix, ramp, rand, smoothPath, win} from '../anim';
+import {EASE_IN_OUT, mix, ramp, smoothPath, win} from '../anim';
 import {PressureArrow, Water, wavePath} from '../components/fluid';
 import {Arrow, Formula, Glow, Label, Motes, Note, Ripple, Stage, Stream, Sub, Twinkles, V} from '../components/primitives';
 import {useScene} from '../SceneContext';
@@ -73,7 +73,7 @@ const Heart: React.FC<{x: number; y: number; s: number; t: number; op?: number}>
 };
 
 export const Blood: React.FC = () => {
-  const {t, cue, cueEnd, wordOf} = useScene();
+  const {t, cue, wordOf} = useScene();
   const appear = ramp(t, -0.3, 1.0);
   const p1 = appear * (1 - ramp(t, cue(1) - 0.4, cue(1) + 0.5, EASE_IN_OUT));
   const p2 = ramp(t, cue(1) - 0.2, cue(1) + 0.7) * (1 - ramp(t, cue(4) - 0.4, cue(4) + 0.4, EASE_IN_OUT));
@@ -124,9 +124,7 @@ export const Blood: React.FC = () => {
   /* ---------- P4: 120 mmHg ≈ 1,6 m air ---------- */
   const rise4 = ramp(t, cue(4) + 0.6, wordOf(4, 'kolom') + 0.6, EASE_IN_OUT);
   const lvl4 = 800 - 480 * rise4;
-  const f4 = ramp(t, wordOf(4, 'enam belas') - 0.3, wordOf(4, 'enam belas') + 0.6);
-  const f4b = ramp(t, wordOf(4, 'enam belas'), wordOf(4, 'enam belas') + 0.01);
-  void f4b;
+  const f4 = ramp(t, wordOf(4, 'enam') - 0.3, wordOf(4, 'enam') + 0.6);
 
   /* ---------- P5: lengan diangkat ---------- */
   const raise = ramp(t, wordOf(5, 'diangkat') - 0.3, wordOf(5, 'diangkat') + 1.4, EASE_IN_OUT);
@@ -534,7 +532,7 @@ export const Blood: React.FC = () => {
         ρ raksa ≈ 13,6 × ρ air
         <br />→ kolomnya 13,6 × lebih pendek
       </Note>
-      <Formula x={1500} y={330} p={f4 * p4 * (1 / Math.max(0.001, p4))} accent={C.press} size={60} caption="13 600 · 9,8 · 0,12 ≈ 16 000 Pa → kolom air ≈ 1,6 m">
+      <Formula x={1500} y={330} p={f4 * Math.min(1, p4 * 1.5)} accent={C.press} size={60} caption="13 600 · 9,8 · 0,12 ≈ 16 000 Pa → kolom air ≈ 1,6 m">
         120 mmHg ≈ <b style={{color: C.press}}>16 kPa</b>
       </Formula>
       <Formula x={1410} y={330} p={f5 * Math.min(1, p5 * 1.5)} accent={C.spr} size={58}>

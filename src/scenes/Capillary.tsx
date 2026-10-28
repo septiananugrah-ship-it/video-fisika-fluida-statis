@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {EASE_IN_OUT, ramp, win} from '../anim';
 import {Tank, WaterMolecule} from '../components/fluid';
-import {Arrow, Formula, Frac, Glow, Label, Motes, Note, Ripple, Stage, Sub, TSub, Tint, Twinkles, V} from '../components/primitives';
+import {Arrow, Formula, Frac, Glow, Label, Motes, Note, Ripple, Stage, Tint, Twinkles, V} from '../components/primitives';
 import {useScene} from '../SceneContext';
 import {C, FONT} from '../theme';
 
@@ -168,7 +168,7 @@ export const Capillary: React.FC = () => {
             </Label>
           </g>
           <Label x={TUBES[0].x} y={TUBE_TOP - 34} size={24} color={C.cyan} weight={700} opacity={num}>
-            r = 0,5 mm
+            r = 0,5 mm · θ ≈ 0
           </Label>
           <Twinkles x={TUBES[0].x - 110} y={SURF - TUBES[0].h / 2 + 30} rx={50} ry={50} n={3} opacity={num} seed={3} />
           {/* lingkar sumber kaca pembesar */}
@@ -211,11 +211,11 @@ export const Capillary: React.FC = () => {
               <WaterMolecule x={IX + IA - 34} y={IW + 44 + 3 * Math.sin(gT * 2.4)} s={0.85} rot={-60 + 10 * Math.sin(gT * 1.5)} />
               <g opacity={adh}>
                 <Arrow x1={IX + IA - 20} y1={IW + 44} x2={IX + IA + 50} y2={IW + 44} color="gold" width={6} pulse={false} />
-                <Label x={IX + IA + 40} y={IW + 82} size={22} color={C.gold} weight={700}>
+                <Label x={IX + IA - 50} y={IW - 26} size={24} color={C.gold} weight={700}>
                   adhesi
                 </Label>
                 <Arrow x1={IX + IA - 50} y1={IW + 50} x2={IX + IA - 86} y2={IW + 62} color="cyan" width={5} pulse={false} />
-                <Label x={IX + IA - 120} y={IW + 88} size={22} color={C.cyan} weight={700}>
+                <Label x={IX + IA - 120} y={IW + 92} size={24} color={C.cyan} weight={700}>
                   kohesi
                 </Label>
               </g>
@@ -257,7 +257,7 @@ export const Capillary: React.FC = () => {
               <g opacity={wcol}>
                 <Glow x={IX} y={IY + 140} r={130} color="force" opacity={0.4} />
                 <Arrow x1={IX} y1={IY + 70} x2={IX} y2={IY + 190} color="force" width={7} />
-                <Label x={IX + 24} y={IY + 120} size={26} color={C.force} anchor="start" weight={700}>
+                <Label x={IX - 24} y={IY + 130} size={26} color={C.force} anchor="end" weight={700}>
                   berat kolom
                 </Label>
               </g>
@@ -310,12 +310,12 @@ export const Capillary: React.FC = () => {
           {(() => {
             const dx0 = 1230;
             const dw = 520;
-            const ys = 730;
+            const ys = 650;
             const yb = 850;
             const cx = 1490;
             const a = 60;
-            const tubeDy = -150 * (1 - hgDip);
-            const depress = 70 * hgFall;
+            const tubeDy = -60 * (1 - hgDip);
+            const depress = 90 * hgFall;
             const yW = ys + depress + 4 * Math.sin(gT * 1.5) * hgFall * 0.3;
             const th = 140;
             const thR = (th * Math.PI) / 180;
@@ -344,17 +344,17 @@ export const Capillary: React.FC = () => {
                 <path d={`M${dx0 - 6},${ys - 70} L${dx0 - 6},${yb + 6} L${dx0 + dw + 6},${yb + 6} L${dx0 + dw + 6},${ys - 70}`} fill="none" stroke="#bfe3ff" strokeOpacity={0.75} strokeWidth={6} strokeLinejoin="round" />
                 <g transform={`translate(0 ${tubeDy})`}>
                   {/* raksa di dalam pipa: lebih rendah, meniskus cembung */}
-                  <path d={`${meniscus(cx, a, yW - tubeDy, th)} L${cx + a},${yb - tubeDy - 4} L${cx - a},${yb - tubeDy - 4} Z`} fill="url(#cp-hg)" opacity={hgDip} />
-                  <path d={meniscus(cx, a, yW - tubeDy, th)} fill="none" stroke="#fff" strokeWidth={2} opacity={hgDip} />
-                  <rect x={cx - a + 2} y={ys - tubeDy - 2} width={2 * a - 4} height={Math.max(0, yW - ys - 8)} fill="#0a1228" opacity={0.85 * hgDip} />
-                  <GlassTube x={cx} a={a} y0={420} y1={yb - 6} />
+                  <rect x={cx - a} y={380} width={2 * a} height={Math.max(0, Math.min(yb - 6 - 380, yW - tubeDy - 380 + 30))} fill="#0a1228" opacity={0.92} />
+                  <path d={`${meniscus(cx, a, yW - tubeDy, th)} L${cx + a},${yb - tubeDy - 4} L${cx - a},${yb - tubeDy - 4} Z`} fill="url(#cp-hg)" />
+                  <path d={meniscus(cx, a, yW - tubeDy, th)} fill="none" stroke="#fff" strokeWidth={2} />
+                  <GlassTube x={cx} a={a} y0={380} y1={yb - 6} />
                 </g>
                 {/* level luar sebagai acuan */}
                 <g opacity={hgFall}>
                   <line x1={cx - a - 40} y1={ys} x2={cx + a + 40} y2={ys} stroke={C.ink} strokeWidth={2} strokeDasharray="8 6" strokeDashoffset={-t * 10} />
-                  <Arrow x1={cx - a - 60} y1={ys - 6} x2={cx - a - 60} y2={yW + 4} color="heat" width={5} pulse={false} />
-                  <Label x={cx - a - 76} y={(ys + yW) / 2} size={26} color={C.heat} anchor="end" weight={700}>
-                    turun
+                  <Arrow x1={cx - 20} y1={ys + 4} x2={cx - 20} y2={yW - 22} color="heat" width={5} pulse={false} />
+                  <Label x={cx - a - 24} y={ys - 34} size={28} color={C.heat} anchor="end" weight={700}>
+                    turun ↓
                   </Label>
                 </g>
                 <g opacity={hgTheta}>
@@ -366,9 +366,9 @@ export const Capillary: React.FC = () => {
                   </Label>
                   <line x1={cx + a + 104} y1={yW - 74} x2={cx + a - 10} y2={yW + 20} stroke={C.gold} strokeWidth={2} opacity={0.6} />
                 </g>
-                <Label x={dx0 + 80} y={yb - 40} size={26} color="#0c1631" weight={700}>
+                <text x={dx0 + dw - 30} y={yb - 26} textAnchor="end" fontFamily={FONT.head} fontWeight={700} fontSize={28} fill="#1a2236">
                   raksa
-                </Label>
+                </text>
               </g>
             );
           })()}
@@ -403,28 +403,15 @@ export const Capillary: React.FC = () => {
           }
         />
       </Formula>
-      <Note x={1480} y={540} p={num} color={C.gold} size={28}>
-        <V>r</V> = 0,5 mm, <V>θ</V> ≈ 0 → <V>h</V> ={' '}
+      <Note x={1480} y={545} p={num} color={C.gold} size={34}>
         <span style={{fontFamily: FONT.serif}}>
-          <Frac n="2 · 0,072" d="1000 · 10 · 0,0005" size={0.62} />
-        </span>{' '}
-        ≈ <Tint c={C.gold}>2,9 cm</Tint>
+          <V>h</V> = <Frac n="2 · 0,072" d="1000 · 10 · 0,0005" size={0.78} /> ≈ <Tint c={C.gold}>2,9 cm</Tint>
+        </span>
       </Note>
-      <Note x={1490} y={290} p={hgNote} color="#c9d2e6" size={28}>
-        raksa: lebih tertarik pada <Tint c={C.cyan}>sesamanya</Tint> → meniskus cembung
+      <Note x={1480} y={290} p={hgNote} color="#c9d2e6" size={28}>
+        raksa: lebih tertarik pada <Tint c={C.cyan}>sesamanya</Tint>
       </Note>
-      <div style={{display: 'none'}}>
-        <Sub>.</Sub>
-        <TSubDummy />
-      </div>
     </AbsoluteFill>
   );
 };
 
-const TSubDummy: React.FC = () => (
-  <svg>
-    <text>
-      <TSub>.</TSub>
-    </text>
-  </svg>
-);
