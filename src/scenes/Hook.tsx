@@ -188,11 +188,11 @@ export const Hook: React.FC = () => {
   const {t, cue, cueEnd, wordOf, dur} = useScene();
 
   // ---- babak ----
-  const actA = 1 - ramp(t, cue(3) - 0.5, cue(3) + 0.2, EASE_IN_OUT);
-  const actB = win(t, cue(3) - 0.2, cue(5) - 0.5, 0.8, 0.6);
-  const actC = win(t, cue(4) - 0.3, cue(5) - 0.5, 0.8, 0.6);
-  const actD = win(t, cue(5) - 0.3, cue(6) - 0.5, 0.8, 0.6);
-  const actE = ramp(t, cue(6) - 0.3, cue(6) + 0.5);
+  const actA = 1 - ramp(t, cue(3) - 0.8, cue(3) - 0.2, EASE_IN_OUT);
+  const actB = win(t, cue(3) - 0.45, cue(5) - 1.0, 0.8, 0.6);
+  const actC = win(t, cue(4) - 0.3, cue(5) - 1.0, 0.8, 0.6);
+  const actD = win(t, cue(5) - 0.65, cue(6) - 1.0, 0.8, 0.6);
+  const actE = ramp(t, cue(6) - 0.65, cue(6) + 0.2);
 
   // ---- babak A: kapal & baut ----
   const heave = 5 * Math.sin(t * 0.7) + 2 * Math.sin(t * 1.3 + 1);

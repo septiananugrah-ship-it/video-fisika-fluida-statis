@@ -72,11 +72,11 @@ const VESSELS: {poly: [number, number][]; name?: string; lx: number; amp: number
 export const Hydro: React.FC = () => {
   const {t, cue, wordOf} = useScene();
 
-  const act1 = 1 - ramp(t, cue(4) - 0.5, cue(4) + 0.1, EASE_IN_OUT); // kolom + turunan
-  const poolOp = 1 - ramp(t, cue(5) - 0.5, cue(5) + 0.1, EASE_IN_OUT);
-  const act2 = win(t, cue(4) - 0.3, cue(5) - 0.5, 0.7, 0.6);
-  const act3 = win(t, cue(5) - 0.3, cue(7) - 0.5, 0.7, 0.6);
-  const act4 = ramp(t, cue(7) - 0.3, cue(7) + 0.5);
+  const act1 = 1 - ramp(t, cue(4) - 0.9, cue(4) - 0.3, EASE_IN_OUT); // kolom + turunan
+  const poolOp = 1 - ramp(t, cue(5) - 1.0, cue(5) - 0.4, EASE_IN_OUT);
+  const act2 = win(t, cue(4) - 0.55, cue(5) - 1.0, 0.7, 0.6);
+  const act3 = win(t, cue(5) - 0.65, cue(7) - 1.0, 0.7, 0.6);
+  const act4 = ramp(t, cue(7) - 0.65, cue(7) + 0.15);
 
   // ---- kolom & diagram gaya bebas ----
   const colIn = ramp(t, cue(0) + 0.6, cue(0) + 1.6);
@@ -88,7 +88,7 @@ export const Hydro: React.FC = () => {
   const aBot = ramp(t, wordOf(1, 'bawah') - 0.3, wordOf(1, 'bawah') + 0.5);
   const fbdOp = lift * act1;
   const rows = [ramp(t, wordOf(1, 'seimbang') - 0.1, wordOf(1, 'seimbang') + 0.7), ramp(t, wordOf(2, 'rho') - 0.2, wordOf(2, 'rho') + 0.6), ramp(t, wordOf(2, 'bagi') - 0.2, wordOf(2, 'bagi') + 0.6)];
-  const rowsCard = rows[0] * (1 - ramp(t, cue(3) - 0.4, cue(3) + 0.1, EASE_IN_OUT));
+  const rowsCard = rows[0] * (1 - ramp(t, cue(3) - 0.7, cue(3) - 0.15, EASE_IN_OUT));
   const mainP = ramp(t, cue(3) - 0.1, cue(3) + 0.8) * act1;
 
   // ---- titik turun di kolam ----
@@ -102,8 +102,8 @@ export const Hydro: React.FC = () => {
   const SC = 700; // px per meter
   const aqSurf = AQ.bot - 0.6 * SC;
   const pRead = ramp(t, wordOf(5, 'enam', 1) - 0.6, wordOf(5, 'enam', 1) + 0.6, EASE_IN_OUT);
-  const card1 = win(t, cue(5) + 0.4, cue(6) - 0.3, 0.7, 0.5);
-  const card2 = ramp(t, cue(6) - 0.1, cue(6) + 0.7);
+  const card1 = win(t, cue(5) + 0.4, cue(6) - 0.8, 0.7, 0.5);
+  const card2 = ramp(t, cue(6) - 0.2, cue(6) + 0.6);
   const r1 = [ramp(t, cue(5) + 0.4, cue(5) + 1.1), ramp(t, wordOf(5, 'sentimeter') - 0.2, wordOf(5, 'sentimeter') + 0.5), ramp(t, wordOf(5, 'enam', 1) - 0.3, wordOf(5, 'enam', 1) + 0.5)];
   const r2 = [ramp(t, cue(6) + 0.2, cue(6) + 0.9), ramp(t, wordOf(6, 'nol') - 0.2, wordOf(6, 'nol') + 0.5), ramp(t, wordOf(6, 'seribu') - 0.3, wordOf(6, 'seribu') + 0.5)];
   const kgP = ramp(t, wordOf(6, 'setara') - 0.3, wordOf(6, 'setara') + 0.6);
@@ -433,7 +433,7 @@ export const Hydro: React.FC = () => {
       </Note>
 
       {/* ---- paradoks ---- */}
-      <Note x={960} y={230} p={win(t, wordOf(7, 'bentuk') - 0.2, cue(8) - 0.2, 0.6, 0.5) * act4} color={C.gold}>
+      <Note x={960} y={230} p={win(t, wordOf(7, 'bentuk') - 0.2, cue(8) - 0.7, 0.6, 0.5) * act4} color={C.gold}>
         bentuk wadah tidak berpengaruh
       </Note>
       <Note x={960} y={230} p={ramp(t, cue(8) - 0.1, cue(8) + 0.6) * act4} color={C.gold}>

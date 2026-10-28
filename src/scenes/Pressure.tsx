@@ -114,8 +114,8 @@ const ROCK: [number, number][] = [
 export const Pressure: React.FC = () => {
   const {t, cue, wordOf} = useScene();
 
-  const act1 = 1 - ramp(t, cue(5) - 0.6, cue(5) + 0.1, EASE_IN_OUT);
-  const act3 = ramp(t, cue(5) - 0.3, cue(5) + 0.6);
+  const act1 = 1 - ramp(t, cue(5) - 0.9, cue(5) - 0.3, EASE_IN_OUT);
+  const act3 = ramp(t, cue(5) - 0.55, cue(5) + 0.3);
   const insets = win(t, cue(1) - 0.2, cue(2) - 0.2, 0.7, 0.6);
   const shrink = ramp(t, cue(2) - 0.4, cue(2) + 0.8, EASE_IN_OUT);
 
@@ -337,7 +337,7 @@ export const Pressure: React.FC = () => {
                   const r = 16;
                   const bx = bounce(m.x0, m.vx, t, BOX.x0 + r + 4, BOX.x1 - 26 - BOX.x0 - 2 * r - 6);
                   const by = bounce(m.y0, m.vy, t, BOX.y0 + r + 4, BOX.y1 - BOX.y0 - 2 * r - 8);
-                  const fl = Math.exp(-((bx.tHigh / 0.06) ** 2));
+                  const fl = Math.exp(-((bx.tHigh / 0.1) ** 2));
                   return (
                     <g key={i}>
                       <WaterMolecule x={bx.pos} y={by.pos} s={0.62} rot={m.rot + m.w * t} />

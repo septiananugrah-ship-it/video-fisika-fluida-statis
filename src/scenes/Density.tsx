@@ -52,10 +52,10 @@ const GL = {x0: 790, x1: 1110, bot: 842, top: 300};
 export const Density: React.FC = () => {
   const {t, cue, cueEnd, wordOf} = useScene();
 
-  const act1 = 1 - ramp(t, cue(2) - 0.5, cue(2) + 0.1, EASE_IN_OUT);
-  const act2 = win(t, cue(2) - 0.3, cue(4) - 0.5, 0.7, 0.6);
-  const act3 = win(t, cue(4) - 0.3, cue(5) - 0.5, 0.7, 0.6);
-  const act4 = ramp(t, cue(5) - 0.3, cue(5) + 0.5);
+  const act1 = 1 - ramp(t, cue(2) - 0.75, cue(2) - 0.15, EASE_IN_OUT);
+  const act2 = win(t, cue(2) - 0.4, cue(4) - 1.0, 0.7, 0.6);
+  const act3 = win(t, cue(4) - 0.65, cue(5) - 1.0, 0.7, 0.6);
+  const act4 = ramp(t, cue(5) - 0.65, cue(5) + 0.1);
 
   // ---- neraca: besi diletakkan → miring; kapas diletakkan → berayun teredam → seimbang ----
   const tI = cue(0) + 2.2;
@@ -102,7 +102,7 @@ export const Density: React.FC = () => {
   const yHoney = GL.bot - hh;
   const yWater = yHoney - hw;
   const yOil = yWater - ho;
-  const SPOUT = {x: 950, y: 230};
+  const SPOUT = {x: 950, y: 262};
   const keyIn = ramp(t, cue(6) + 0.2, cue(6) + 1.0);
 
   return (
