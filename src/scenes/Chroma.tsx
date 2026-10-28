@@ -267,7 +267,7 @@ export const Chroma: React.FC = () => {
         <Frac
           n={<span style={{fontFamily: FONT.sans, fontStyle: 'normal'}}>jarak tempuh zat</span>}
           d={<span style={{fontFamily: FONT.sans, fontStyle: 'normal'}}>jarak tempuh pelarut</span>}
-          size={0.62}
+          size={0.74}
         />
       </Formula>
       <Note x={1450} y={540} p={nOp} color={C.press} size={32}>
@@ -377,12 +377,12 @@ const MoleculeView: React.FC<{t: number; op: number}> = ({t, op}) => {
             [ZX + x, ZY - ZR],
           ]}
           color="water"
-          n={6}
+          n={7}
           speed={0.24}
-          r={3}
+          r={4}
           jitter={2}
           seed={k}
-          opacity={0.6}
+          opacity={0.85}
         />
       ))}
       {[wl, wr].map((x, k) => (
@@ -395,7 +395,7 @@ const MoleculeView: React.FC<{t: number; op: number}> = ({t, op}) => {
         serat
       </Label>
       {DYES.flatMap((d, di) =>
-        [0, 1, 2, 3].map((j) => {
+        [0, 1, 2, 3, 4, 5].map((j) => {
           const seed = di * 10 + j;
           const ph = rand(seed * 3.7) * 6.28;
           const s = dyeS(d.rf, t, w, ph);
@@ -407,9 +407,9 @@ const MoleculeView: React.FC<{t: number; op: number}> = ({t, op}) => {
           const x = mix(lane, wall, 0.9 * stuck * stuck);
           return (
             <g key={seed} opacity={cyc(u)}>
-              <circle cx={x} cy={y} r={20} fill={d.c} opacity={0.18} />
-              <circle cx={x} cy={y} r={9} fill={d.c} />
-              <circle cx={x - 3} cy={y - 3} r={3} fill="#fff" opacity={0.7} />
+              <circle cx={x} cy={y} r={26} fill={d.c} opacity={0.22} />
+              <circle cx={x} cy={y} r={12} fill={d.c} stroke="#fff" strokeOpacity={0.5} strokeWidth={1.5} />
+              <circle cx={x - 4} cy={y - 4} r={3.5} fill="#fff" opacity={0.75} />
             </g>
           );
         }),

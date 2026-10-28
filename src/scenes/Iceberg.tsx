@@ -117,7 +117,7 @@ const Ship: React.FC<{t: number; gash: number}> = ({t, gash}) => (
 );
 
 /** Kisi es heksagonal: O di sudut segi enam, ikatan hidrogen putus-putus. */
-const HEX_A = 74;
+const HEX_A = 86;
 const LAT = (() => {
   const pts: P[] = [];
   const box = {x0: 200, x1: 860, y0: 230, y1: 810};
@@ -459,7 +459,7 @@ export const Iceberg: React.FC = () => {
         <Sub>es</Sub> ≈ 917 kg/m³ &lt; <V>ρ</V>
         <Sub>air</Sub>
       </Formula>
-      <Formula x={1420} y={300} p={fOp} accent={C.water} size={56}>
+      <Formula x={1470} y={610} p={fOp} accent={C.water} size={56}>
         <V>f</V> = <Frac n={<span><V>ρ</V><Sub>es</Sub></span>} d={<span><V>ρ</V><Sub>laut</Sub></span>} /> = <Frac n="917" d="1025" /> ≈ <b style={{color: C.water}}>0,89</b>
       </Formula>
       <Note x={1440} y={250} p={p5 * ramp(t, wordOf(5, 'ikan') - 0.3, wordOf(5, 'ikan') + 0.5)} color={C.cyan} size={28}>

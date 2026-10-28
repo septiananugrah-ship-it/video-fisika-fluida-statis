@@ -137,7 +137,7 @@ export const Outro: React.FC = () => {
             );
           })}
           <div style={{marginTop: 12, fontFamily: FONT.sans, fontSize: 18, color: C.faint, opacity: ramp(t, 5.2, 6.0)}}>
-            Ilustrasi skematis · g = 10 m/s², ρ air = 1000 kg/m³ seperti modul · contoh angka dari modul dan sumber di atas
+            Ilustrasi skematis · g = 10 m/s² (9,8 pada contoh dunia nyata), ρ air = 1000 kg/m³ seperti modul · contoh angka dari modul dan sumber di atas
           </div>
         </div>
         <div

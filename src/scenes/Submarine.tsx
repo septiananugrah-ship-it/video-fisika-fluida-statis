@@ -419,10 +419,10 @@ export const Submarine: React.FC = () => {
               return <PressureArrow key={k} x={1080 + Math.cos(a) * 14} y={probeY + Math.sin(a) * 14} nx={Math.cos(a)} ny={Math.sin(a)} L={6 + 34 * tProbe} width={3} opacity={ramp(tProbe, 0.02, 0.1)} />;
             })}
             <Spark x={1080} y={probeY} r={8} color="gold" />
-            <Label x={1056} y={probeY - 8} anchor="end" size={22} color={C.ink} font="mono" opacity={ramp(tProbe, 0.01, 0.05)}>
+            <Label x={1056} y={probeY - 46} anchor="end" size={22} color={C.ink} font="mono" opacity={ramp(tProbe, 0.01, 0.05)}>
               {Math.round(dm / 10) * 10} m
             </Label>
-            <Label x={1056} y={probeY + 20} anchor="end" size={22} color={C.press} font="mono" opacity={ramp(tProbe, 0.01, 0.05)}>
+            <Label x={1056} y={probeY - 18} anchor="end" size={22} color={C.press} font="mono" opacity={ramp(tProbe, 0.01, 0.05)}>
               {Math.round(atmAt(dm))} atm
             </Label>
             <Ripple x={1080} y={PS + 10.9 * KM} p={(t - cue(4) - 6.0) / 1.4} r={130} color="press" />

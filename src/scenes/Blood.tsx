@@ -102,8 +102,8 @@ export const Blood: React.FC = () => {
   const tcx = mix(420, 760, flip);
   const tRel = cue(2) + 0.3;
   const tau = Math.max(0, t - tRel);
-  const topW = t < tRel ? 178 : 268 - 90 * Math.exp(-1.5 * tau) * Math.cos(3.4 * tau);
-  const topL = topW - 500; // koordinat lokal tabung (pusat di 500)
+  const topW = t < tRel ? 190 : 268 - 78 * Math.exp(-1.5 * tau) * Math.cos(3.4 * tau);
+  const topL = topW - 512; // koordinat lokal tabung (pusat di 512)
   const sh = ramp(t, cue(3) - 0.1, cue(3) + 1.6, EASE_IN_OUT);
   const bs = mix(1, 0.0857, sh);
   const bx = mix(760, 720, sh);
@@ -247,7 +247,7 @@ export const Blood: React.FC = () => {
             <g transform={`translate(${bx.toFixed(2)} ${by.toFixed(2)}) scale(${bs.toFixed(4)}) translate(-760 -800)`}>
               <ellipse cx={760} cy={866} rx={230} ry={14} fill="#000" opacity={0.35 * (1 - sh)} />
               {/* tabung */}
-              <g transform={`translate(${tcx.toFixed(2)} 500) rotate(${rot.toFixed(2)})`}>
+              <g transform={`translate(${tcx.toFixed(2)} 512) rotate(${rot.toFixed(2)})`}>
                 <rect x={-18} y={topL} width={36} height={330 - topL} fill={HG} />
                 <path d={`M-18,${topL + 4} Q0,${topL - 6} 18,${topL + 4}`} fill={HG} />
                 <rect x={-12} y={topL + 6} width={6} height={Math.max(0, 320 - topL)} fill="#fff" opacity={0.35} />
@@ -281,7 +281,7 @@ export const Blood: React.FC = () => {
               {[600, 660, 870, 925].map((x) => (
                 <PressureArrow key={x} x={x} y={798} nx={0} ny={-1} L={78} width={5} />
               ))}
-              <Label x={898} y={690} size={26} color={C.press} weight={600}>
+              <Label x={950} y={690} size={26} color={C.press} weight={600}>
                 tekanan atmosfer
               </Label>
             </g>
@@ -400,7 +400,7 @@ export const Blood: React.FC = () => {
             <rect x={880} y={800} width={40} height={40} rx={4} fill="#3a1a3a" stroke={C.press} strokeWidth={2} />
             <rect x={894} y={800 - 36} width={12} height={36} fill={HG} />
             <path d="M890,800 L890,700 A10,10 0 0 1 910,700 L910,800" fill="none" stroke="#bfe3ff" strokeOpacity={0.7} strokeWidth={2.5} />
-            <Label x={926} y={762} anchor="start" size={22} color={HG}>
+            <Label x={900} y={676} size={22} color={HG}>
               raksa 120 mm
             </Label>
             <Body x={1110} feet={838} H={510} arm={82} t={t} />
@@ -532,7 +532,7 @@ export const Blood: React.FC = () => {
         ρ raksa ≈ 13,6 × ρ air
         <br />→ kolomnya 13,6 × lebih pendek
       </Note>
-      <Formula x={1500} y={330} p={f4 * Math.min(1, p4 * 1.5)} accent={C.press} size={60} caption="13 600 · 9,8 · 0,12 ≈ 16 000 Pa → kolom air ≈ 1,6 m">
+      <Formula x={1400} y={245} p={f4 * Math.min(1, p4 * 1.5)} accent={C.press} size={60} caption="13 600 · 9,8 · 0,12 ≈ 16 000 Pa → kolom air ≈ 1,6 m">
         120 mmHg ≈ <b style={{color: C.press}}>16 kPa</b>
       </Formula>
       <Formula x={1410} y={330} p={f5 * Math.min(1, p5 * 1.5)} accent={C.spr} size={58}>

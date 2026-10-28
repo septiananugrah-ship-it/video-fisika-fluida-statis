@@ -320,9 +320,9 @@ export const Recap: React.FC = () => {
         <g opacity={q}>
           <Stream
             pts={[
-              [100, 800],
-              [200, 800],
-              [300, 800],
+              [90, 800],
+              [140, 800],
+              [190, 800],
             ]}
             color="press"
             n={6}
@@ -332,9 +332,9 @@ export const Recap: React.FC = () => {
           />
           <Stream
             pts={[
-              [1820, 800],
-              [1720, 800],
-              [1620, 800],
+              [1830, 800],
+              [1780, 800],
+              [1730, 800],
             ]}
             color="buoy"
             n={6}
@@ -390,7 +390,7 @@ export const Recap: React.FC = () => {
             <div style={{fontFamily: FONT.head, fontSize: 26, color: it.color, fontWeight: 600, letterSpacing: 1}}>
               {String(i + 1).padStart(2, '0')} · {it.title}
             </div>
-            <div style={{fontFamily: FONT.serif, fontSize: 42, marginTop: 8, whiteSpace: 'nowrap', textAlign: 'center', height: 84, lineHeight: '84px'}}>{it.body}</div>
+            <div style={{fontFamily: FONT.serif, fontSize: 38, marginTop: 10, whiteSpace: 'nowrap', textAlign: 'center', height: 82, lineHeight: '82px'}}>{it.body}</div>
             <svg width={SW} height={SH} viewBox={`0 0 ${SW} ${SH}`} style={{display: 'block', marginTop: 2, opacity: mini, overflow: 'visible'}}>
               <Mini t={t + rand(i) * 3} />
             </svg>
