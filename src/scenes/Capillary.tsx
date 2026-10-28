@@ -361,10 +361,10 @@ export const Capillary: React.FC = () => {
                   <line x1={cx + a} y1={yW} x2={cx + a + tanx * 80} y2={yW + tany * 80} stroke={C.ink} strokeWidth={2.5} strokeDasharray="6 5" />
                   <path d={`M${p0[0].toFixed(1)},${p0[1].toFixed(1)} A${rA},${rA} 0 0 1 ${p1[0].toFixed(1)},${p1[1].toFixed(1)}`} fill="none" stroke={C.gold} strokeWidth={4} />
                   <circle cx={cx + a} cy={yW} r={5} fill={C.gold} />
-                  <Label x={cx + a + 110} y={yW - 90} size={30} color={C.gold} anchor="start" weight={700} font="serif">
+                  <Label x={cx + a + 24} y={ys - 110} size={30} color={C.gold} anchor="start" weight={700} font="serif">
                     θ &gt; 90°
                   </Label>
-                  <line x1={cx + a + 104} y1={yW - 74} x2={cx + a - 10} y2={yW + 20} stroke={C.gold} strokeWidth={2} opacity={0.6} />
+                  <line x1={cx + a + 40} y1={ys - 92} x2={cx + a - 14} y2={yW + 26} stroke={C.gold} strokeWidth={2} opacity={0.6} />
                 </g>
                 <text x={dx0 + dw - 30} y={yb - 26} textAnchor="end" fontFamily={FONT.head} fontWeight={700} fontSize={28} fill="#1a2236">
                   raksa

@@ -22,6 +22,14 @@ const STEPS: React.ReactNode[] = [
 ];
 
 const ROW0 = 262;
+const CHIPS: {x: number; y: number; c: string; f: React.ReactNode}[] = [
+  {x: 420, y: 360, c: C.press, f: <>p = p₀ + ρgh</>},
+  {x: 860, y: 330, c: C.buoy, f: <>F<Sub>A</Sub> = ρ<Sub>f</Sub> V g</>},
+  {x: 600, y: 520, c: C.spr, f: <>ρ = m / V</>},
+  {x: 1040, y: 560, c: C.force, f: <>F₁/A₁ = F₂/A₂</>},
+  {x: 470, y: 690, c: C.cyan, f: <>h = 2γ cos θ / ρgr</>},
+  {x: 940, y: 740, c: C.press, f: <>p = F / A</>},
+];
 const RAIL_X = 250;
 const LIST_X = 290;
 
@@ -138,6 +146,33 @@ export const Strategy: React.FC = () => {
           </g>
           <Motes x={900} y={540} rx={780} ry={300} n={22} color="cyan" opacity={0.35} seed={3} />
         </Stage>
+        {CHIPS.map((c, i) => {
+          const o = win(t, cue(0) + 0.3 + 0.25 * i, cue(1) - 0.4, 0.6, 0.6) * 0.9;
+          const x = c.x + 18 * Math.sin(gT * 0.4 + i * 1.7);
+          const y = c.y + 14 * Math.sin(gT * 0.55 + i * 2.3);
+          return (
+            <div
+              key={i}
+              style={{
+                position: 'absolute',
+                left: x,
+                top: y,
+                transform: `translate(-50%, -50%) rotate(${4 * Math.sin(gT * 0.3 + i)}deg)`,
+                opacity: o,
+                padding: '12px 26px',
+                borderRadius: 14,
+                background: 'rgba(14,22,50,0.85)',
+                border: `1.5px solid ${c.c}88`,
+                color: c.c,
+                fontFamily: FONT.serif,
+                fontSize: 40,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {c.f}
+            </div>
+          );
+        })}
         <div style={{position: 'absolute', left: LIST_X + 480, top: 196, transform: 'translateX(-50%)', opacity: head, fontFamily: FONT.head, fontSize: 26, letterSpacing: 6, color: C.cyan, fontWeight: 600}}>
           URUTAN BERPIKIR
         </div>
@@ -215,6 +250,7 @@ export const Strategy: React.FC = () => {
               <rect x={CX - CUBE / 2} y={cTop} width={CUBE} height={CUBE} rx={10} />
             </clipPath>
           </defs>
+          <g transform="translate(510 590) scale(1.12) translate(-510 -590)">
           <ellipse cx={(BX0 + BX1) / 2} cy={BYB + 10} rx={290} ry={14} fill="#000" opacity={0.35} />
           {/* minyak di atas, air di bawah */}
           <path d={`${oilTop} L${BX1 - 6},${IFACE + 12} L${BX0 + 6},${IFACE + 12} Z`} fill="url(#st-oil)" />
@@ -233,7 +269,7 @@ export const Strategy: React.FC = () => {
               <line x1={CX - CUBE / 2} y1={IFACE} x2={CX + CUBE / 2} y2={IFACE} stroke="#fff" strokeWidth={2} strokeDasharray="6 5" />
             </g>
             <rect x={CX - CUBE / 2 + 8} y={cTop + 6} width={CUBE - 16} height={8} rx={4} fill="#fff" opacity={0.2} />
-            <Label x={CX} y={cTop + 34} size={26} color={C.ink} weight={600} font="serif">
+            <Label x={CX - CUBE / 2 - 14} y={cy} size={26} color={C.ink} weight={600} font="serif" anchor="end">
               <tspan fill={C.spr} fontStyle="italic">
                 ρ
               </tspan>{' '}
@@ -275,9 +311,10 @@ export const Strategy: React.FC = () => {
             <Label x={CX + 64} y={cy + 168} size={26} color={C.force} anchor="start" weight={700}>
               W
             </Label>
-            <Label x={CX - 50} y={cTop - 40} size={24} color={C.buoy} anchor="end" weight={700}>
+            <Label x={CX} y={OIL_TOP - 70} size={24} color={C.buoy} weight={700}>
               F<TSub>A</TSub> minyak + F<TSub>A</TSub> air
             </Label>
+          </g>
           </g>
           {/* garis bilangan: 900 di tengah 800 dan 1000 */}
           <g opacity={mid}>
