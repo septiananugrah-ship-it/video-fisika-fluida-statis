@@ -27,5 +27,5 @@ Konvensi modul: g = 10 m/s², ρ air = 1000 kg/m³, p_atm = 100 000 Pa (kecuali 
 
 - γ etanol ≈ 0,022 N/m, aseton ≈ 0,024 N/m (20 °C, CRC Handbook) — batang di adegan `soap` tanpa angka.
 - Hidrometer 0,8 / 1,0 / 1,2 g/mL; larutan gula ≈ 1,15 g/mL (± 35 % sukrosa) — ilustrasi.
-- Baja ≈ 7850 kg/m³; es 917, air laut 1025 kg/m³ (`iceberg`); lilin padat > 1000 hanya kualitatif.
+- Baja ≈ 7850 kg/m³; es 917, air laut 1025 kg/m³ (`iceberg`); lilin padat tenggelam di lilin cair (padat lebih rapat dari cairnya — kebalikan es); kualitatif.
 - Kapilaritas: lup menggambar θ = 25° agar sudut terlihat; hitungan memakai θ ≈ 0.

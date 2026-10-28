@@ -303,7 +303,7 @@ export const Iceberg: React.FC = () => {
               es di air: mengapung
             </Label>
             <Label x={780} y={830} size={25} color="#e0a440">
-              lilin padat: tenggelam
+              lilin padat di lilin cair: tenggelam
             </Label>
             <Twinkles x={370} y={480} rx={90} ry={30} n={4} color="cyan" opacity={ramp(t, wordOf(1, 'keanehan') - 0.2, wordOf(1, 'keanehan') + 0.5)} seed={2} />
             {/* batang massa jenis */}
