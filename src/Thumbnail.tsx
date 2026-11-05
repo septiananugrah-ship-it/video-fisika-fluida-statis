@@ -17,9 +17,18 @@ export const Thumbnail: React.FC = () => (
       {BRAND.channel} <span style={{color: C.muted, letterSpacing: 2, fontWeight: 400}}>· {BRAND.tagline}</span>
     </div>
     <svg width={2560} height={1440} style={{position: 'absolute', inset: 0}}>
-      {[0, 1, 2, 3].map((i) => (
-        <rect key={i} x={1700 + i * 170} y={1100 - [520, 300, 140, 700][i]} width={120} height={[520, 300, 140, 700][i]} rx={14} fill={[C.water, C.press, C.buoy, 'none'][i]} stroke={i === 3 ? C.ink : 'none'} strokeWidth={6} strokeDasharray={i === 3 ? '20 14' : undefined} />
+      <rect x={1640} y={420} width={760} height={700} fill={C.water} opacity={0.22} />
+      <path d="M1640,420 Q1735,404 1830,420 T2020,420 T2210,420 T2400,420" fill="none" stroke={C.water} strokeWidth={6} />
+      <path d="M1620,300 L1620,1140 L2420,1140 L2420,300" fill="none" stroke={C.ink} strokeWidth={10} strokeLinejoin="round" />
+      {[540, 700, 860, 1020].map((y, i) => (
+        <g key={y}>
+          <line x1={1660} y1={y} x2={1660 + 50 + i * 40} y2={y} stroke={C.press} strokeWidth={9} strokeLinecap="round" />
+          <path d={`M${1660 + 50 + i * 40 - 22},${y - 16} L${1660 + 50 + i * 40 + 6},${y} L${1660 + 50 + i * 40 - 22},${y + 16}`} fill={C.press} />
+        </g>
       ))}
+      <rect x={2060} y={360} width={200} height={170} rx={10} fill={C.gold} opacity={0.9} />
+      <line x1={2160} y1={720} x2={2160} y2={560} stroke={C.buoy} strokeWidth={12} strokeLinecap="round" />
+      <path d="M2134,580 L2160,540 L2186,580 Z" fill={C.buoy} />
     </svg>
   </AbsoluteFill>
 );
